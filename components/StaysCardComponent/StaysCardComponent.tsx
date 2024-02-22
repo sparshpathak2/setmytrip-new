@@ -4,7 +4,28 @@ import { Card, Image, Text, Badge, Button, Group, Title, Flex, Divider, List } f
 import { IconArrowUpRight, IconBed, IconCalendarEvent, IconClock12, IconCreditCard, IconHeart, IconMapPin, IconPointFilled, IconRoad, IconUserHeart } from '@tabler/icons-react'
 import '@/styles/globals.css';
 
-const StaysCardComponent = ({ staysItems }) => {
+interface StaysItem {
+    type: string;
+    title: string;
+    rating: number;
+    distance: string;
+    priceRange: string;
+    roomOptions: string;
+    checkInOut: string;
+    location: string;
+    button1Title?: string;
+    button1Link?: string;
+    button2Title?: string;
+    button2Link?: string;
+    button3Title?: string;
+    button3Link?: string;
+}
+
+interface StaysCardComponentProps {
+    staysItems: StaysItem;
+}
+
+const StaysCardComponent = ({ staysItems }: StaysCardComponentProps) => {
     // console.log(staysItemArray)
     return (
         <>
