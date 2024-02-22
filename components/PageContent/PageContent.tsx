@@ -1,8 +1,12 @@
 'use client'
-
 import { Title, Text } from "@mantine/core"
 
-const pageContent = ({ page }) => {
+interface Page {
+    type: string;
+    content: string;
+}
+
+const pageContent = ({ page }: { page: Page }) => {
     // console.log({ page })
 
     return (
@@ -18,19 +22,6 @@ const pageContent = ({ page }) => {
             ) : (
                 <Text mt='0.8em' mb='0.8em'>{page?.content}</Text>
             )}
-
-            {/* {page?.type == "heading_1" ? (
-                <h1>{page?.content}</h1>
-            ) : page?.type == "heading_2" ? (
-                <h2>{page?.content}</h2>
-            ) : page?.type == "heading_3" ? (
-                <h3>{page?.content}</h3>
-            ) : page?.type == "paragraph" ? (
-                <p>{page?.content}</p>
-            ) : (
-                <p>{page?.content}</p>
-            )} */}
-
         </>
     )
 }
