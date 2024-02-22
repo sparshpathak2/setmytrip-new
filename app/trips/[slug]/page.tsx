@@ -12,6 +12,7 @@ import { getNotionDatabasePages } from "@/lib/notionClient";
 import { getNotionDatabasePages2 } from "@/lib/notionClient2";
 import { getNotionPagesDB } from "@/lib/notionPagesDB";
 import { getNotionPageContentById } from "@/lib/notionPageContentById";
+import { Key } from "react";
 
 
 export default async function tripPage({ params }: { params: { slug: string } }) {
@@ -68,7 +69,7 @@ export default async function tripPage({ params }: { params: { slug: string } })
                     >
                         <Breadcrumbs>{breadCrumbs}</Breadcrumbs>
                         <Title
-                            align="center"
+                            style={{ textAlign: 'center' }}
                             order={1}
                             px={{ base: '16px', sm: '16px', md: '40px', lg: '240px' }}
                         >
@@ -87,7 +88,7 @@ export default async function tripPage({ params }: { params: { slug: string } })
                         pb={{ base: '32px', sm: '32px', md: '56px', lg: '56px' }}
                     // className="container-main-content-sm container-main-content-md container-main-content-lg"
                     >
-                        {notionPage?.map(item => (
+                        {notionPage?.map((item: { id: Key | null | undefined; type: string; }) => (
                             <div key={item.id}>
                                 {item.type == "link_to_page" ? (
                                     // <TimelineComponentOld
