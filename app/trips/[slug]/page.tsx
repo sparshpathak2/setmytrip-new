@@ -88,7 +88,7 @@ export default async function tripPage({ params }: { params: { slug: string } })
                         pb={{ base: '32px', sm: '32px', md: '56px', lg: '56px' }}
                     // className="container-main-content-sm container-main-content-md container-main-content-lg"
                     >
-                        {notionPage?.map((item: { id: Key | null | undefined; type: string; }) => (
+                        {notionPage?.map((item: { id: Key | null | undefined; type: string; content?: string }) => (
                             <div key={item.id}>
                                 {item.type == "link_to_page" ? (
                                     // <TimelineComponentOld
@@ -101,10 +101,10 @@ export default async function tripPage({ params }: { params: { slug: string } })
                                     // />
                                     // null
                                     <TimelineComponent
-                                    itrs={list.databasePages}
+                                        itrs={list.databasePages}
                                     />
                                 ) : <PageContent
-                                    page={item}
+                                    page={{ ...item, content: item.content! }}
                                 />}
                             </div>
                         ))}
