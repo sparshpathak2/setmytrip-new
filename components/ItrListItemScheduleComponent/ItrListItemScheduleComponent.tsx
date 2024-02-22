@@ -1,6 +1,6 @@
 // import React from 'react';
 
-export default function ItrListItemSchedule({ openDays }) {
+export default function ItrListItemSchedule({ openDays }: { openDays: any[] }) {
   // Weekdays in single-letter format
   const weekdays = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
 
@@ -16,7 +16,7 @@ export default function ItrListItemSchedule({ openDays }) {
   };
 
   // Find the color for a given day
-  const findColorForDay = (day) => {
+  const findColorForDay = (day: any) => {
     const dayObject = openDays.find(d => dayMapping[d.name] === day);
     return dayObject ? dayObject.color : 'black'; // Default color if not found
   };
