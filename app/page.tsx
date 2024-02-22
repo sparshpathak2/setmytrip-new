@@ -1,9 +1,10 @@
-import { Welcome } from '../components/Welcome/Welcome';
+// import { Welcome } from '@/components/Welcome/Welcome';
 import '@/styles/globals.css';
-import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
+// import { ColorSchemeToggle } from '@/components/ColorSchemeToggle/ColorSchemeToggle';
 import { Title, Text, Anchor, Flex, Button } from '@mantine/core';
 import Head from 'next/head';
-import bgVideo from '../public/home-bg-video.mp4';
+import bgVideo from '@/public/home-bg-video.mp4';
+// import bgVideo from '@/public/'
 import { IconArrowUpRight } from '@tabler/icons-react';
 
 export default function HomePage() {
