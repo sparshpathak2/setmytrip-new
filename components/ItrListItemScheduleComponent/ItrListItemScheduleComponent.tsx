@@ -1,19 +1,26 @@
 // import React from 'react';
 
-export default function ItrListItemSchedule({ openDays }: { openDays: any[] }) {
+interface OpenDay {
+  name: keyof typeof dayMapping;
+  color: string;
+}
+
+// Mapping for full day names to single-letter format
+const dayMapping = {
+  'Mon': 'M',
+  'Tue': 'T',
+  'Wed': 'W',
+  'Thu': 'T',
+  'Fri': 'F',
+  'Sat': 'S',
+  'Sun': 'S'
+};
+
+
+export default function ItrListItemSchedule({ openDays }: { openDays: OpenDay[] }) {
   // Weekdays in single-letter format
   const weekdays = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
-
-  // Mapping for full day names to single-letter format
-  const dayMapping = {
-    'Mon': 'M',
-    'Tue': 'T',
-    'Wed': 'W',
-    'Thu': 'T',
-    'Fri': 'F',
-    'Sat': 'S',
-    'Sun': 'S'
-  };
+  
 
   // Find the color for a given day
   const findColorForDay = (day: any) => {
