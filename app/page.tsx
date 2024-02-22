@@ -3,7 +3,7 @@ import '@/styles/globals.css';
 // import { ColorSchemeToggle } from '@/components/ColorSchemeToggle/ColorSchemeToggle';
 import { Title, Text, Anchor, Flex, Button } from '@mantine/core';
 import Head from 'next/head';
-import bgVideo from '@/public/home-bg-video.mp4';
+// import bgVideo from '@/public/home-bg-video.mp4';
 // import bgVideo from '@/public/'
 import { IconArrowUpRight } from '@tabler/icons-react';
 
@@ -14,10 +14,10 @@ export default function HomePage() {
         <div className="overlay-bg"></div>
 
         {/* Video Background */}
-        <video autoPlay muted loop className="video-bg">
+        {/* <video autoPlay muted loop className="video-bg">
           <source src={bgVideo} type="video/mp4" />
           Your browser does not support the video tag.
-        </video>
+        </video> */}
 
         {/* Text Overlay */}
         {/* <div className="overlay-text">
