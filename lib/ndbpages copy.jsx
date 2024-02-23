@@ -1,30 +1,30 @@
 import { getNotionPropertiesById } from "./notionPropertiesById";
 
-export async function getndbpages(databasePageBySlugMatchId: string) {
+export async function getndbpages(databasePageBySlugMatchId) {
 
     const { Client } = require('@notionhq/client');
 
     const notion = new Client({ auth: process.env.NOTION_API_KEY });
 
-    interface NotionPage {
-        id: string;
-        properties: {
-            [key: string]: any; // Consider defining more specific types based on your usage
-        };
-        // Include other properties you might be accessing
-    }
+    // interface NotionPage {
+    //     id: string;
+    //     properties: {
+    //         [key: string]: any; // Consider defining more specific types based on your usage
+    //     };
+    //     // Include other properties you might be accessing
+    // }
 
-    interface NotionProperty {
-        // Define structure according to the properties you need
-        title?: [{ plain_text: string }];
-        select?: { name: string };
-        date?: { start: string };
-        rich_text?: [{ plain_text: string }];
-        number?: number;
-        multi_select?: [{ name: string; color: string }];
-        relation?: [{ id: string }];
-        // Add more as needed
-    }
+    // interface NotionProperty {
+    //     // Define structure according to the properties you need
+    //     title?: [{ plain_text: string }];
+    //     select?: { name: string };
+    //     date?: { start: string };
+    //     rich_text?: [{ plain_text: string }];
+    //     number?: number;
+    //     multi_select?: [{ name: string; color: string }];
+    //     relation?: [{ id: string }];
+    //     // Add more as needed
+    // }
 
     // function safelyGetProperty<T>(obj: any, propPath: (string | number)[], defaultValue?: T): T | undefined {
     //     let result = obj;
@@ -36,10 +36,10 @@ export async function getndbpages(databasePageBySlugMatchId: string) {
     //   }
       
 
-    function fromNotionObject(notionPage: NotionPage) {
-        // const propertiesById = getNotionPropertiesById(notionPage.properties)
+    function fromNotionObject(notionPage) {
+        const propertiesById = getNotionPropertiesById(notionPage.properties)
         // const propertiesById: { [key: string]: NotionProperty } = getNotionPropertiesById(notionPage.properties);
-        const propertiesById = getNotionPropertiesById(notionPage.properties) as { [key: string]: NotionProperty };
+        // const propertiesById = getNotionPropertiesById(notionPage.properties) as { [key: string]: NotionProperty };
 
 
         return {
