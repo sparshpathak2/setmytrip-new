@@ -31,9 +31,6 @@ export default async function tripPage({ params }: { params: { slug: string } })
     const notionPage = await getNotionPageContentById(databasePageBySlugMatch[0].id)
     // console.log(notionPage)
 
-    // const testvar2 = await getNotionDatabasePages('bcb14dcd36324a0dab296f78a8a929f4')
-    // console.log(testvar2)
-
     // testing 2
     // const resListItems = await fetch(`https://setmytrip-qrlo7rbkv-sparshpathak2.vercel.app/api/notion-list-items?listid=508e27df-b143-450c-a668-b9ee89567328`)
     // const listItems = await resListItems.json()
