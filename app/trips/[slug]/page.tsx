@@ -35,12 +35,12 @@ export default async function tripPage({ params }: { params: { slug: string } })
     // console.log(testvar2)
 
     // testing 2
-    const resListItems = await fetch(`http://localhost:3000/api/notion-list-items?listid=508e27df-b143-450c-a668-b9ee89567328`)
+    const resListItems = await fetch(`/api/notion-list-items?listid=508e27df-b143-450c-a668-b9ee89567328`)
     const listItems = await resListItems.json()
     // const listItems = await resListItems
     // console.log(listItems)
 
-    const resList = await fetch(`http://localhost:3000/api/notion-list?slug=${slug}`)
+    const resList = await fetch(`/api/notion-list?slug=${slug}`)
     const list = await resList.json()
 
     // console.log(list)
