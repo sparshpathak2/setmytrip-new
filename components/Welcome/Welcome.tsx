@@ -2,7 +2,7 @@
 
 import { Title, Text, Anchor } from '@mantine/core';
 import classes from './Welcome.module.css';
-import CardBox from '@/components/CardBox/CardBox';
+// import CardBox from '@/components/CardBox/CardBox';
 import { Grid } from '@mantine/core';
 // import { CardBox } from '../components/CardBox/CardBox';
 
