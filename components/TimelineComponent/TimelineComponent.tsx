@@ -7,8 +7,44 @@ import PageContent from '@/components/PageContent/PageContent';
 import ItrListItemSchedule from '../ItrListItemScheduleComponent/ItrListItemScheduleComponent';
 import StaysCardComponent from '../StaysCardComponent/StaysCardComponent';
 
+interface ListItem {
+    id: string;
+    // Add other properties if present in the actual data structure
+}
 
-const fetchData = async (listIds) => {
+interface ItemType {
+    day: string;
+    itrItems: {
+        title: string;
+        time: string;
+        distance: string;
+        type: string;
+        rating: string;
+        entryFee: string;
+        // open: string;
+        personalizedRecommendation: string;
+        location: string;
+        thumbnail?: string;
+        button1Title?: string;
+        button1Link?: string;
+        button2Title?: string;
+        button2Link?: string;
+        button3Title?: string;
+        button3Link?: string;
+        pageContent?: any[]; // Add this property
+        open: {
+            id: string;
+            name: string;
+            color: string;
+        }
+        // Add more properties as needed
+    }[];
+    // Add more properties as needed
+}
+
+
+
+const fetchData = async (listIds: ListItem[]) => {
     try {
         const [listItemsRes, pageDataRes, staysListItemsRes] = await Promise.all([
             fetch(`http://localhost:3000/api/notion-list-items?listid=${listIds[0].id}`),
@@ -32,17 +68,34 @@ const fetchData = async (listIds) => {
     }
 };
 
-const TimelineComponent = ({ itrs }) => {
+interface ItrItem {
+    // Define the properties of each item in itrs
+    // For example:
+    id: string;
+    title: string;
+    relations: { id: string }[];
+    // Add other properties as needed
+}
+
+interface TimelineComponentProps {
+    itrs: ItrItem[];
+    // Define other props if present
+}
+
+const TimelineComponent = ({ itrs }: TimelineComponentProps) => {
     const listIds = itrs[0].relations
     //   console.log(listIds[0].id)
     // console.log(stays)
+
     const [listItems, setListItems] = useState([])
     const [list, setList] = useState(null)
     const [pageData, setPageData] = useState([])
     const [staysListItems, setStaysListItems] = useState([])
     // const [listContent, setListContent] = useState([])
     const [itrCategory, setitrCategory] = useState([])
-    const [data, setData] = useState(null)
+    // const [data, setData] = useState(null)
+    const [data, setData] = useState<{ listItems: any; pageData: any; staysListItems: any; } | null>(null);
+
 
 
     useEffect(() => {
@@ -217,7 +270,7 @@ const TimelineComponent = ({ itrs }) => {
                             direction="row"
                             gap="8px"
                         >
-                            {data?.listItems?.notionPageData?.notionPage?.properties.Category.multi_select?.map((itrCategory) => (
+                            {data?.listItems?.notionPageData?.notionPage?.properties.Category.multi_select?.map((itrCategory: { name: string }) => (
                                 <Badge color="blue" size='lg' radius='lg'>{itrCategory.name}</Badge>
                             ))}
                         </Flex>
@@ -225,7 +278,7 @@ const TimelineComponent = ({ itrs }) => {
                         <Divider className='divider-sm divider-md divider-lg' />
 
 
-                        {data?.listItems?.notionPageData.itrItemsList?.map((item) => (
+                        {data?.listItems?.notionPageData.itrItemsList?.map((item: ItemType) => (
                             <>
 
                                 <Flex
@@ -351,7 +404,7 @@ const TimelineComponent = ({ itrs }) => {
                                                                             align="center"
                                                                         >
                                                                             <Text>Open:</Text>
-                                                                            <ItrListItemSchedule openDays={subitem.open} />
+                                                                            <ItrListItemSchedule openDays={[subitem.open]} />
                                                                         </Flex>
                                                                     </List.Item>
                                                                     <List.Item style={{ fontSize: '16px', lineHeight: '1.5rem' }}
@@ -389,7 +442,7 @@ const TimelineComponent = ({ itrs }) => {
                                                             <Divider my="sm" />
                                                         </Card.Section>
                                                         <Container mx='0px' px='0px'>
-                                                            {subitem?.pageContent.map((content) => (
+                                                            {subitem?.pageContent && subitem?.pageContent?.map((content) => (
                                                                 <PageContent
                                                                     page={content}
                                                                 />
@@ -415,7 +468,25 @@ const TimelineComponent = ({ itrs }) => {
                             </>
                         ))}
                         <Title order={2}>Staying Options</Title>
-                        {data?.staysListItems?.notionPageData?.databasePages?.map((item) => (
+                        {data?.staysListItems?.notionPageData?.databasePages?.map((item: {
+                            id: string;
+                            title: string;
+                            type: string;
+                            rating: number;
+                            location: string;
+                            distance: string;
+                            roomOptions: string;
+                            checkInOut: string;
+                            priceRange: string;
+                            // relatedITR: { id: string; }[];
+                            thumbnail: string;
+                            button1Title: string;
+                            button1Link: string;
+                            button2Title: string;
+                            button2Link: string;
+                            // pageContent: { id: string; type: string; content?: string; }[];
+                            // pageContent: any[];
+                        }) => (
                             <StaysCardComponent
                                 staysItems={item}
                             />

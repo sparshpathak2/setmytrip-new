@@ -1,7 +1,9 @@
 // import React from 'react';
 
 interface OpenDay {
-  name: keyof typeof dayMapping;
+  id: string;
+  // name: keyof typeof dayMapping;
+  name: string;
   color: string;
 }
 
@@ -23,10 +25,16 @@ export default function ItrListItemSchedule({ openDays }: { openDays: OpenDay[] 
   
 
   // Find the color for a given day
-  const findColorForDay = (day: any) => {
-    const dayObject = openDays.find(d => dayMapping[d.name] === day);
-    return dayObject ? dayObject.color : 'black'; // Default color if not found
-  };
+  // const findColorForDay = (day: any) => {
+  //   const dayObject = openDays.find(d => dayMapping[d.name] === day);
+  //   return dayObject ? dayObject.color : 'black'; // Default color if not found
+  // };
+
+
+  // const findColorForDay = (day: string) => {
+  //   const dayObject = openDays.find(d => d.name === day);
+  //   return dayObject ? dayObject.color : 'black'; // Default color if not found
+  // };
 
   return (
     <div>
@@ -35,9 +43,11 @@ export default function ItrListItemSchedule({ openDays }: { openDays: OpenDay[] 
           key={day}
           style={{
             margin: '0 5px',
-            fontWeight: openDays.some(d => dayMapping[d.name] === day) ? 'bold' : 'normal',
+            // fontWeight: openDays.some(d => dayMapping[d.name] === day) ? 'bold' : 'normal',
+            // fontWeight: openDays.some(d => d.name === day) ? 'bold' : 'normal',
             // color: findColorForDay(day) // Use the color specified for the day
-            color: openDays.some(d => dayMapping[d.name] === day) ? '#228BE6' : 'black',
+            // color: openDays.some(d => dayMapping[d.name] === day) ? '#228BE6' : 'black',
+            // color: openDays.find(d => d.name === day)?.color ?? 'black',
           }}
         >
           {day}
