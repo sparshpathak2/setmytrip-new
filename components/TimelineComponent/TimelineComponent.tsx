@@ -50,9 +50,9 @@ const fetchData = async (listIds: ListItem[]) => {
             // fetch(`http://localhost:3000/api/notion-list-items?listid=${listIds[0].id}`),
             // fetch(`http://localhost:3000/api/notion-pages/${listIds[0].id}`),
             // fetch(`http://localhost:3000/api/notion-list-stays?listid=${listIds[0].id}`),
-            fetch(`/api/notion-list-items?listid=${listIds[0].id}`),
-            fetch(`/api/notion-pages/${listIds[0].id}`),
-            fetch(`/api/notion-list-stays?listid=${listIds[0].id}`),
+            fetch(`https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-list-items?listid=${listIds[0].id}`),
+            fetch(`https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-pages/${listIds[0].id}`),
+            fetch(`https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-list-stays?listid=${listIds[0].id}`),
         ]);
 
         const [listItems, pageData, staysListItems] = await Promise.all([
