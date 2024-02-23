@@ -1,6 +1,6 @@
 import { getNotionPropertiesById } from "./notionPropertiesById";
 
-export async function getNotionDatabasePagesBySlugMatch(slug: string) {
+export async function getNotionDatabasePagesBySlugMatch(slug) {
 
     const { Client } = require('@notionhq/client');
 
