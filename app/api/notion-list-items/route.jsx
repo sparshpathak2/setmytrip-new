@@ -9,18 +9,18 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 export const GET = async (req, res) => {
     // Set CORS headers
-    // res.setHeader('Access-Control-Allow-Origin', '*');
-    // res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
-    // res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
 
     // Check if it's a preflight request
-    // if (req.method === 'OPTIONS') {
-    //     res.status(200).end();
-    //     return;
-    // }
+    if (req.method === 'OPTIONS') {
+        res.status(200).end();
+        return;
+    }
     
     
-    console.log("This is GET endpoint")
+    // console.log("This is GET endpoint")
     const searchParams = req.nextUrl.searchParams
     const query = searchParams.get('listid')
     // const searchParams = req.query;
