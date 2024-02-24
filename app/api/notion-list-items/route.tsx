@@ -42,8 +42,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 // app/api/your-api-route.ts
 
-export async function GET(request: { url: string | URL }) {
-    const url = new URL(request.url);
+export async function GET(req: NextRequest) {
+    const url = new URL(req.url);
     const query = url.searchParams.get('listid');
   
     try {
