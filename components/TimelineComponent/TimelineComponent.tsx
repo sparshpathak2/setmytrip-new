@@ -48,7 +48,7 @@ const fetchData = async (listIds: ListItem[]) => {
     try {
         const options = {
             headers: {
-                'Access-Control-Allow-Origin': '*'
+                'Access-Control-Allow-Origin': 'https://setmytrip-am8wgkycq-sparshpathak2.vercel.app'
             }
         }
         const [listItemsRes, pageDataRes, staysListItemsRes] = await Promise.all([
