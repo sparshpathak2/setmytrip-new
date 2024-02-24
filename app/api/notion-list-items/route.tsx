@@ -6,7 +6,8 @@ import groupItemsByDay from "@/utils/reduceFuntion"
 import { NextRequest, NextResponse } from "next/server"
 import { NextApiRequest, NextApiResponse } from 'next';
 
-export const GET = async (req, res) => {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+// export const GET = async (req: NextRequest, res: NextResponse) => {
     // Set CORS headers
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
@@ -21,10 +22,10 @@ export const GET = async (req, res) => {
     
     
     // console.log("This is GET endpoint")
-    const searchParams = req.nextUrl.searchParams
-    const query = searchParams.get('listid')
-    // const searchParams = req.query;
-    // const query = searchParams.listid as string;
+    // const searchParams = req.nextUrl.searchParams
+    // const query = searchParams.get('listid')
+    const searchParams = req.query;
+    const query = searchParams.listid as string;
     
     try {
         const databasePages = await getNotionDatabasePages(query)
