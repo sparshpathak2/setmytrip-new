@@ -44,27 +44,61 @@ interface ItemType {
 
 
 
+// const fetchData = async (listIds: ListItem[]) => {
+    
+//     try {
+//         const options = {
+//             headers: {
+//                 'Access-Control-Allow-Origin': 'https://setmytrip-am8wgkycq-sparshpathak2.vercel.app'
+//             }
+//         }
+//         const [listItemsRes, pageDataRes, staysListItemsRes] = await Promise.all([
+//             // fetch(`http://localhost:3000/api/notion-list-items?listid=${listIds[0].id}`),
+//             // fetch(`http://localhost:3000/api/notion-pages/${listIds[0].id}`),
+//             // fetch(`http://localhost:3000/api/notion-list-stays?listid=${listIds[0].id}`),
+//             fetch(`https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-list-items?listid=${listIds[0].id}`, options),
+//             fetch(`https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-pages/${listIds[0].id}`, options),
+//             fetch(`https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-list-stays?listid=${listIds[0].id}`, options),
+//         ]);
+
+//         const [listItems, pageData, staysListItems] = await Promise.all([
+//             listItemsRes.json(),
+//             pageDataRes.json(),
+//             staysListItemsRes.json()
+//         ]);
+
+//         return { listItems, pageData, staysListItems };
+//     } catch (error) {
+//         console.error('Error fetching data:', error);
+//         throw error;
+//     }
+// };
+
 const fetchData = async (listIds: ListItem[]) => {
     try {
-        const options = {
-            headers: {
-                'Access-Control-Allow-Origin': 'https://setmytrip-am8wgkycq-sparshpathak2.vercel.app'
+        // Construct the URLs for fetching data
+        const urls = [
+            `https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-list-items?listid=${listIds[0].id}`,
+            `https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-pages/${listIds[0].id}`,
+            `https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-list-stays?listid=${listIds[0].id}`,
+        ];
+
+        // Fetch data from multiple endpoints in parallel
+        const responses = await Promise.all(
+            urls.map(url => fetch(url))
+        );
+
+        // Check if any response is not successful
+        for (const response of responses) {
+            if (!response.ok) {
+                throw new Error(`Failed to fetch data: ${response.statusText}`);
             }
         }
-        const [listItemsRes, pageDataRes, staysListItemsRes] = await Promise.all([
-            // fetch(`http://localhost:3000/api/notion-list-items?listid=${listIds[0].id}`),
-            // fetch(`http://localhost:3000/api/notion-pages/${listIds[0].id}`),
-            // fetch(`http://localhost:3000/api/notion-list-stays?listid=${listIds[0].id}`),
-            fetch(`https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-list-items?listid=${listIds[0].id}`, options),
-            fetch(`https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-pages/${listIds[0].id}`, options),
-            fetch(`https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-list-stays?listid=${listIds[0].id}`, options),
-        ]);
 
-        const [listItems, pageData, staysListItems] = await Promise.all([
-            listItemsRes.json(),
-            pageDataRes.json(),
-            staysListItemsRes.json()
-        ]);
+        // Parse JSON data from responses
+        const [listItems, pageData, staysListItems] = await Promise.all(
+            responses.map(response => response.json())
+        );
 
         return { listItems, pageData, staysListItems };
     } catch (error) {
@@ -72,6 +106,10 @@ const fetchData = async (listIds: ListItem[]) => {
         throw error;
     }
 };
+
+
+
+
 
 interface ItrItem {
     // Define the properties of each item in itrs
