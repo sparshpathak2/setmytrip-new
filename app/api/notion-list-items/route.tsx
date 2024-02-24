@@ -6,8 +6,8 @@ import groupItemsByDay from "@/utils/reduceFuntion"
 import { NextRequest, NextResponse } from "next/server"
 import { NextApiRequest, NextApiResponse } from 'next';
 
-export const GET = async ( req: NextApiRequest, res: NextApiResponse ) => {
-    
+
+export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
     // Set CORS headers
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
