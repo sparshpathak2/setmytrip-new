@@ -46,13 +46,18 @@ interface ItemType {
 
 const fetchData = async (listIds: ListItem[]) => {
     try {
+        const options = {
+            headers: {
+                'Access-Control-Allow-Origin': '*'
+            }
+        }
         const [listItemsRes, pageDataRes, staysListItemsRes] = await Promise.all([
             // fetch(`http://localhost:3000/api/notion-list-items?listid=${listIds[0].id}`),
             // fetch(`http://localhost:3000/api/notion-pages/${listIds[0].id}`),
             // fetch(`http://localhost:3000/api/notion-list-stays?listid=${listIds[0].id}`),
-            fetch(`https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-list-items?listid=${listIds[0].id}`),
-            fetch(`https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-pages/${listIds[0].id}`),
-            fetch(`https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-list-stays?listid=${listIds[0].id}`),
+            fetch(`https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-list-items?listid=${listIds[0].id}`, options),
+            fetch(`https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-pages/${listIds[0].id}`, options),
+            fetch(`https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-list-stays?listid=${listIds[0].id}`, options),
         ]);
 
         const [listItems, pageData, staysListItems] = await Promise.all([
