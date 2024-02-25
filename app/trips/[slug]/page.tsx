@@ -42,7 +42,7 @@ export default async function tripPage({ params }: { params: { slug: string } })
     const resList = await fetch(`${process.env.BASE_URL}/api/notion-list?slug=${slug}`)
     // const resList = await fetch(`https://setmytrip-new.vercel.app/api/notion-list?slug=${slug}`)
     const list = await resList.json()
-    console.log(list)
+    // console.log(list)
 
 
 
@@ -58,7 +58,7 @@ export default async function tripPage({ params }: { params: { slug: string } })
 
     const listIds = list.databasePages[0]?.relations
 
-    console.log(listIds)
+    // console.log(listIds)
 
 
     const fetchData = async (listIds: ListID[]) => {
@@ -109,7 +109,8 @@ export default async function tripPage({ params }: { params: { slug: string } })
     // const itrs = await itrsData.json()
     // console.log(itrs)
 
-
+    // console.log(itrs.listItems.notionPageData.notionPage.properties)
+    console.log(itrs.listItems.notionPageData.itrItemsList[0].itrItems)
 
 // TESTING FETCHING DATA ON THE SERVER SIDE END
 

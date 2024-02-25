@@ -6,12 +6,13 @@ import { useEffect, useState } from 'react';
 import PageContent from '@/components/PageContent/PageContent';
 import ItrListItemSchedule from '../ItrListItemScheduleComponent/ItrListItemScheduleComponent';
 import StaysCardComponent from '../StaysCardComponent/StaysCardComponent';
+// import Image from 'next/image';
 
 
 
 
 // const fetchData = async (listIds: ListItem[]) => {
-    
+
 //     try {
 //         const options = {
 //             headers: {
@@ -80,12 +81,12 @@ const TimelineComponent = ({ itrs }) => {
     //   console.log(listIds[0].id)
     // console.log(stays)
 
-    const [listItems, setListItems] = useState([])
-    const [list, setList] = useState(null)
-    const [pageData, setPageData] = useState([])
-    const [staysListItems, setStaysListItems] = useState([])
+    // const [listItems, setListItems] = useState([])
+    // const [list, setList] = useState(null)
+    // const [pageData, setPageData] = useState([])
+    // const [staysListItems, setStaysListItems] = useState([])
     // const [listContent, setListContent] = useState([])
-    const [itrCategory, setitrCategory] = useState([])
+    // const [itrCategory, setitrCategory] = useState([])
     // const [data, setData] = useState(null)
     // const [data, setData] = useState<{ listItems, pageData, staysListItems } | null>(null);
 
@@ -320,6 +321,8 @@ const TimelineComponent = ({ itrs }) => {
                                                                     mb='1rem'
                                                                     p='0px'
                                                                     mx='0px'
+                                                                    // width={500}
+                                                                    // height={500}
                                                                 // className='image-itr-item-sm image-itr-item-md image-itr-item-lg'
                                                                 />
                                                             </AspectRatio>
@@ -471,7 +474,7 @@ const TimelineComponent = ({ itrs }) => {
 
 
 
-            
+
         </>
     )
 }

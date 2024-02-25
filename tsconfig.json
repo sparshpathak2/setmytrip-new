@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "utils/reduceFuntion.jsx", "lib/notionPropertiesById.jsx", "lib/notionPagesDB.jsx", "lib/notionPageContentById.jsx", "lib/notionPage.jsx", "lib/notionDatabasePagesBySlugMatch2.jsx", "lib/notionDatabasePagesBySlugMatch.jsx", "lib/notionDatabasePages.jsx", "lib/notionDatabasePageById.jsx", "lib/notionDatabaseBySlug.jsx", "lib/notionDatabase.jsx", "lib/notionClient3.jsx", "lib/notionClient2.jsx", "lib/ndbpages.jsx", "lib/notionClient.jsx", "lib/notionClient copy.jsx", "lib/ndbpages copy.jsx", "app/api/notion-list-items/route.jsx", "components/TimelineComponent2/TimelineComponent2.jsx"],
-  "exclude": ["node_modules"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "utils/reduceFuntion.tsx", "lib/notionPropertiesById.tsx", "lib/notionPagesDB.tsx", "lib/notionPageContentById.tsx", "lib/notionPage.tsx", "lib/notionDatabasePagesBySlugMatch2.tsx", "lib/notionDatabasePagesBySlugMatch.tsx", "lib/notionDatabasePages.tsx", "lib/notionDatabasePageById.tsx", "lib/notionDatabaseBySlug.tsx", "lib/notionDatabase.tsx", "lib/notionClient3.tsx", "lib/notionClient2.tsx", "lib/ndbpages.tsx", "lib/notionClient.tsx", "lib/notionClient copy.tsx", "lib/ndbpages copy.tsx", "app/api/notion-list-items/route.tsx", "components/TimelineComponent/TimelineComponent2.tsx", "app/page.jsx"],
+  "exclude": ["node_modules"],
 }
