@@ -460,7 +460,7 @@ const TimelineComponent = ({ itrs }) => {
                             </>
                         ))}
                         <Title order={2}>Staying Options</Title>
-                        {data?.staysListItems?.notionPageData?.databasePages?.map((item) => (
+                        {itrs?.staysListItems?.notionPageData?.databasePages?.map((item) => (
                             <StaysCardComponent
                                 staysItems={item}
                             />
