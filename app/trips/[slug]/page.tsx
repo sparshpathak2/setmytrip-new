@@ -57,7 +57,7 @@ export default async function tripPage({ params }: { params: { slug: string } })
     const listIds = list.databasePages[0].relations
 
 
-    const fetchData = async (listIds: ListID) => {
+    const fetchData = async (listIds: ListID[]) => {
         try {
             // Construct the URLs for fetching data
             const urls = [
