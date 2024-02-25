@@ -87,7 +87,7 @@ const TimelineComponent = ({ itrs }) => {
     // const [listContent, setListContent] = useState([])
     const [itrCategory, setitrCategory] = useState([])
     // const [data, setData] = useState(null)
-    const [data, setData] = useState<{ listItems, pageData, staysListItems } | null>(null);
+    // const [data, setData] = useState<{ listItems, pageData, staysListItems } | null>(null);
 
 
 

@@ -38,6 +38,7 @@ export default async function tripPage({ params }: { params: { slug: string } })
     // const listItems = await resListItems
     // console.log(listItems)
 
+    // const resList = await fetch(`http://localhost:3000/api/notion-list?slug=${slug}`)
     const resList = await fetch(`https://setmytrip-qrlo7rbkv-sparshpathak2.vercel.app/api/notion-list?slug=${slug}`)
     const list = await resList.json()
     console.log(list)
@@ -63,6 +64,9 @@ export default async function tripPage({ params }: { params: { slug: string } })
         try {
             // Construct the URLs for fetching data
             const urls = [
+                // `http://localhost:3000/api/notion-list-items?listid=${listIds[0].id}`,
+                // `http://localhost:3000/api/notion-pages/${listIds[0].id}`,
+                // `http://localhost:3000/api/notion-list-stays?listid=${listIds[0].id}`,
                 `https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-list-items?listid=${listIds[0].id}`,
                 `https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-pages/${listIds[0].id}`,
                 `https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-list-stays?listid=${listIds[0].id}`,
