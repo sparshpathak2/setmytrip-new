@@ -2,7 +2,6 @@
 
 import { getNotionPage } from "@/lib/notionPage"
 import { notFound } from "next/navigation"
-import TimelineComponent from '@/components/TimelineComponent/TimelineComponent';
 import PageContent from "@/components/PageContent/PageContent";
 import { Text, Title, Container, Divider, Center, Flex, Grid, Anchor, Breadcrumbs } from '@/lib/mantineui';
 import { getNotionDatabasePagesBySlugMatch } from "@/lib/notionDatabasePagesBySlugMatch";
@@ -13,7 +12,7 @@ import { getNotionDatabasePages2 } from "@/lib/notionClient2";
 import { getNotionPagesDB } from "@/lib/notionPagesDB";
 import { getNotionPageContentById } from "@/lib/notionPageContentById";
 import { Key } from "react";
-import TimelineComponent2 from "@/components/TimelineComponent2/TimelineComponent2";
+import TimelineComponent from "@/components/TimelineComponent/TimelineComponent";
 
 
 export default async function tripPage({ params }: { params: { slug: string } }) {
@@ -104,7 +103,7 @@ export default async function tripPage({ params }: { params: { slug: string } })
 
     const itrs = await fetchData(listIds)
     // const itrs = await itrsData.json()
-    console.log(itrs)
+    // console.log(itrs)
 
 
 
@@ -172,7 +171,7 @@ export default async function tripPage({ params }: { params: { slug: string } })
                                     // <TimelineComponent
                                     //     itrs={list.databasePages}
                                     // />
-                                    <TimelineComponent2
+                                    <TimelineComponent
                                         itrs={itrs}
                                     />
                                 ) : <PageContent
