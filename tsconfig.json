@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "utils/reduceFuntion.jsx", "lib/notionPropertiesById.jsx", "lib/notionPagesDB.jsx", "lib/notionPageContentById.jsx", "lib/notionPage.jsx", "lib/notionDatabasePagesBySlugMatch2.jsx", "lib/notionDatabasePagesBySlugMatch.jsx", "lib/notionDatabasePages.jsx", "lib/notionDatabasePageById.jsx", "lib/notionDatabaseBySlug.jsx", "lib/notionDatabase.jsx", "lib/notionClient3.jsx", "lib/notionClient2.jsx", "lib/ndbpages.jsx", "lib/notionClient.jsx", "lib/notionClient copy.jsx", "lib/ndbpages copy.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "utils/reduceFuntion.jsx", "lib/notionPropertiesById.jsx", "lib/notionPagesDB.jsx", "lib/notionPageContentById.jsx", "lib/notionPage.jsx", "lib/notionDatabasePagesBySlugMatch2.jsx", "lib/notionDatabasePagesBySlugMatch.jsx", "lib/notionDatabasePages.jsx", "lib/notionDatabasePageById.jsx", "lib/notionDatabaseBySlug.jsx", "lib/notionDatabase.jsx", "lib/notionClient3.jsx", "lib/notionClient2.jsx", "lib/ndbpages.jsx", "lib/notionClient.jsx", "lib/notionClient copy.jsx", "lib/ndbpages copy.jsx", "app/api/notion-list-items/route.jsx"],
   "exclude": ["node_modules"]
 }

@@ -13,20 +13,20 @@ import { NextApiRequest, NextApiResponse } from 'next';
 //     res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
 //     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
 
-   
+
 //     // Check if it's a preflight request
 //     if (req.method === 'OPTIONS') {
 //         res.status(200).end();
 //         return;
 //     }
-    
-    
+
+
 //     // console.log("This is GET endpoint")
 //     // const searchParams = req.nextUrl.searchParams
 //     // const query = searchParams.get('listid')
 //     const searchParams = req.query;
 //     const query = searchParams.listid as string;
-    
+
 //     try {
 //         const databasePages = await getNotionDatabasePages(query)
 //         const notionPage = await getNotionDatabasePageById(query)
@@ -42,34 +42,38 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 // app/api/your-api-route.ts
 
-export async function GET(req: NextRequest) {
+export async function GET(req: Request) {
     const url = new URL(req.url);
     const query = url.searchParams.get('listid');
-  
+
     try {
-      const databasePages = await getNotionDatabasePages(query);
-      const notionPage = await getNotionDatabasePageById(query);
-      const itrItemsList = groupItemsByDay(databasePages);
-  
-      // Prepare the response data
-      const data = { message: "OK", notionPageData: { notionPage, itrItemsList }};
-      
-      // Return the response
-      return new Response(JSON.stringify(data), {
-        status: 200,
-        headers: {
-          'Content-Type': 'application/json',
-          // Your additional headers here
-        },
-      });
+        const databasePages = await getNotionDatabasePages(query);
+        const notionPage = await getNotionDatabasePageById(query);
+        const itrItemsList = groupItemsByDay(databasePages);
+
+        // Prepare the response data
+        const data = { message: "OK", notionPageData: { notionPage, itrItemsList } };
+
+        // Return the response
+        return new Response(JSON.stringify(data), {
+            status: 200,
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+                'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+            },
+        });
     } catch (err) {
-      // Handle errors
-      return new Response(JSON.stringify({ message: "Error", err }), {
-        status: 500,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+        // Handle errors
+        return new Response(JSON.stringify({ message: "Error", err }), {
+            status: 500,
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+                'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+            },
+        });
     }
-  }
-  
+}
