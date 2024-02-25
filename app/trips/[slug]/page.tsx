@@ -13,6 +13,7 @@ import { getNotionDatabasePages2 } from "@/lib/notionClient2";
 import { getNotionPagesDB } from "@/lib/notionPagesDB";
 import { getNotionPageContentById } from "@/lib/notionPageContentById";
 import { Key } from "react";
+import TimelineComponent2 from "@/components/TimelineComponent2/TimelineComponent2";
 
 
 export default async function tripPage({ params }: { params: { slug: string } }) {
@@ -39,8 +40,69 @@ export default async function tripPage({ params }: { params: { slug: string } })
 
     const resList = await fetch(`https://setmytrip-qrlo7rbkv-sparshpathak2.vercel.app/api/notion-list?slug=${slug}`)
     const list = await resList.json()
-
     console.log(list)
+
+
+
+
+
+// TESTING FETCHING DATA ON THE SERVER SIDE START
+
+
+    interface ListID {
+        id: string;
+        // Add other properties if present in the actual data structure
+    }
+
+    const listIds = list.databasePages[0].relations
+
+
+    const fetchData = async (listIds: ListID) => {
+        try {
+            // Construct the URLs for fetching data
+            const urls = [
+                `https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-list-items?listid=${listIds[0].id}`,
+                `https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-pages/${listIds[0].id}`,
+                `https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-list-stays?listid=${listIds[0].id}`,
+            ];
+    
+            // Fetch data from multiple endpoints in parallel
+            const responses = await Promise.all(
+                urls.map(url => fetch(url))
+            );
+    
+            // Check if any response is not successful
+            for (const response of responses) {
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch data: ${response.statusText}`);
+                }
+            }
+    
+            // Parse JSON data from responses
+            const [listItems, pageData, staysListItems] = await Promise.all(
+                responses.map(response => response.json())
+            );
+    
+            return { listItems, pageData, staysListItems };
+        } catch (error) {
+            console.error('Error fetching data:', error);
+            throw error;
+        }
+    };
+
+
+
+    const itrs = await fetchData(listIds)
+    // const itrs = await itrsData.json()
+    console.log(itrs)
+
+
+
+// TESTING FETCHING DATA ON THE SERVER SIDE END
+
+
+
+
 
     const breadCrumbs = [
         { title: "Home", href: '/' },
@@ -97,8 +159,11 @@ export default async function tripPage({ params }: { params: { slug: string } })
                                     // // stays={staysList}
                                     // />
                                     // null
-                                    <TimelineComponent
-                                        itrs={list.databasePages}
+                                    // <TimelineComponent
+                                    //     itrs={list.databasePages}
+                                    // />
+                                    <TimelineComponent2
+                                        itrs={itrs}
                                     />
                                 ) : <PageContent
                                     page={{ ...item, content: item.content! }}
