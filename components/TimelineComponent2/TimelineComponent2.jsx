@@ -223,12 +223,252 @@ const TimelineComponent = ({ itrs }) => {
 
     return (
         <>
-            <Title
+            {/* <Title
                 order={2}
                 size='28px'
             >
                 {itrs?.listItems?.notionPageData.itrItemsList[0].itrItems[0].title}
-            </Title>
+            </Title> */}
+
+
+
+            {itrs?.listItems?.notionPageData.itrItemsList.length == 0 ? null : (
+                <>
+                    <Flex
+                        gap="16px"
+                        justify="flex-start"
+                        // align="center"
+                        direction="column"
+                        wrap="wrap"
+                        mt="12px"
+                        // px='24px'
+                        pb='sm'
+                        style={{
+                            border: '2px #ced4da',
+                            borderStyle: 'dotted',
+                            borderRadius: '12px'
+                        }}
+                        className='flex-itr-box-sm flex-itr-box-md flex-itr-box-lg'
+                    >
+                        <Title
+                            order={2}
+                            size='28px'
+                            className='itr-title-sm itr-title-md itr-title-lg'
+                        >
+                            {itrs?.listItems?.notionPageData?.notionPage?.properties.Name.title[0].plain_text}
+                        </Title>
+
+                        <Flex
+                            direction="row"
+                            gap="8px"
+                        >
+                            {itrs?.listItems?.notionPageData?.notionPage?.properties.Category.multi_select?.map((itrCategory) => (
+                                <Badge color="blue" size='lg' radius='lg'>{itrCategory.name}</Badge>
+                            ))}
+                        </Flex>
+
+                        <Divider className='divider-sm divider-md divider-lg' />
+
+
+                        {itrs?.listItems?.notionPageData.itrItemsList?.map((item) => (
+                            <>
+
+                                <Flex
+                                    gap="8px"
+                                    justify="flex-start"
+                                    align="center"
+                                    direction="row"
+                                    wrap="wrap"
+                                    mt="8px"
+                                    mb="4px"
+                                    ml="-4px"
+                                >
+                                    <ThemeIcon variant='white' color="blue" size={28} radius="xl">
+                                        <IconCalendar style={{ width: '24px', height: '24px' }} />
+                                    </ThemeIcon>
+                                    <Text size='22px' fw='700' fs='italic'>{item.day}</Text>
+                                </Flex>
+
+                                <Timeline active={10} className='timeline-sm timeline-md timeline-lg' lineWidth={2}>
+
+                                    {item?.itrItems.map((subitem) => {
+                                        return (
+                                            <>
+                                                <Timeline.Item variant='' className='timeline-title timeline-bullet-sm' title={subitem.title} mt='0px'>
+
+                                                    <Badge color="blue" variant='outline' size='lg' fz='16px'>{subitem.time}</Badge>
+                                                    <Card
+                                                        withBorder
+                                                        // p={{ base: 'sm', sm: 'sm', md: 'lg', lg: 'lg' }}
+                                                        style={{
+                                                            backgroundColor: '#fafdff'
+                                                            // backgroundColor: '#f9fafb'
+                                                        }}
+                                                        className='card-itr-item-sm card-itr-item-md card-itr-item-lg'
+                                                        my='16px'
+                                                    >
+                                                        {/* <Title order={3}>{page.title}</Title> */}
+
+                                                        <Card.Section>
+                                                            <AspectRatio ratio={16 / 9} >
+                                                                <Image
+                                                                    src={subitem.thumbnail}
+                                                                    // height={250}
+                                                                    alt="Norway"
+                                                                    // mt="1rem"
+                                                                    // radius="sm"
+                                                                    mb='1rem'
+                                                                    p='0px'
+                                                                    mx='0px'
+                                                                // className='image-itr-item-sm image-itr-item-md image-itr-item-lg'
+                                                                />
+                                                            </AspectRatio>
+                                                        </Card.Section>
+
+
+                                                        <Flex
+                                                            // mih={50}
+                                                            // gap='16px'
+                                                            gap={{ base: '8px', sm: 'lg', md: 'sm', lg: 'lg' }}
+                                                            justify="flex-start"
+                                                            align={{ sm: 'flex-start', md: 'center', lg: 'center' }}
+                                                            direction={{ base: 'column', sm: 'column', md: 'row', lg: 'row' }}
+                                                            wrap="wrap"
+                                                            pt='16px'
+                                                        >
+                                                            {/* <Badge color="yellow.1" size='lg' c='dark.4'>{subsubitem.type}</Badge> */}
+                                                            <Badge color="red.9" size='lg' variant='light'>{subitem.type}</Badge>
+                                                            {/* <IconPointFilled style={{ width: '12px', height: '12px', color: '#CED4DA' }} /> */}
+                                                            <Flex
+                                                                // mih={50}
+                                                                gap='8px'
+                                                                justify="flex-start"
+                                                                align="center"
+                                                                direction="row"
+                                                                wrap="wrap">
+                                                                <IconUserHeart style={{ width: '20px', height: '20px', color: "#228be6" }} />
+                                                                <Text fw='600'>{subitem.rating}/5</Text>
+                                                                {/* <IconStarFilled style={{ width: '20px', height: '20px', color: "#228be6" }}/> */}
+                                                            </Flex>
+                                                        </Flex>
+                                                        <Card.Section>
+                                                            <Divider my="sm" />
+                                                        </Card.Section>
+                                                        <Flex
+                                                            gap="md"
+                                                            // justify="space-between"
+                                                            // align="flex-start"
+                                                            // wrap="wrap"
+                                                            // px='16px'
+                                                            // py='4px'
+                                                            direction={{ base: 'column', sm: 'column', md: 'row', lg: 'row' }}
+                                                        // className='itr-item-features-sm itr-item-features-md itr-item-features-lg'
+                                                        >
+                                                            <Flex
+                                                                gap="md"
+                                                                // justify="space-between"
+                                                                // align="flex-start"
+                                                                // direction="column"
+                                                                // wrap="wrap"
+                                                                className='item-usps-sm item-usps-md item-usps-lg'
+                                                            >
+                                                                <List
+                                                                    spacing="xs"
+                                                                    size="sm"
+                                                                >
+                                                                    <List.Item style={{ fontSize: '16px', marginTop: '8px', lineHeight: '1.25rem' }}
+                                                                        icon={
+                                                                            <IconRoad style={{ width: '22px', height: '22px', color: "#228be6" }} />
+                                                                        }
+                                                                    >Distance from the city center: {subitem.distance}</List.Item>
+                                                                    <List.Item style={{ fontSize: '16px', lineHeight: '1.25rem' }}
+                                                                        icon={
+                                                                            <IconCreditCard style={{ width: '22px', height: '22px', color: "#228be6" }} />
+                                                                        }
+                                                                    >Price Estimate: {subitem.entryFee}</List.Item>
+                                                                    <List.Item style={{ fontSize: '16px', lineHeight: '1.5rem' }}
+                                                                        icon={
+                                                                            <IconCalendarEvent style={{ width: '22px', height: '22px', color: "#228be6" }} />
+                                                                        }
+                                                                    >
+                                                                        <Flex
+                                                                            gap='6px'
+                                                                            align="center"
+                                                                        >
+                                                                            <Text>Open:</Text>
+                                                                            <ItrListItemSchedule openDays={[subitem.open]} />
+                                                                        </Flex>
+                                                                    </List.Item>
+                                                                    <List.Item style={{ fontSize: '16px', lineHeight: '1.5rem' }}
+                                                                        icon={
+                                                                            <IconHeart style={{ width: '22px', height: '22px', color: "#228be6" }} />
+                                                                        }
+                                                                    >Personalized Recommendation: {subitem.personalizedRecommendation}</List.Item>
+                                                                    <List.Item style={{ fontSize: '16px', lineHeight: '1.5rem' }}
+                                                                        icon={
+                                                                            <IconMapPin style={{ width: '20px', height: '20px', color: "#228be6" }} />
+                                                                        }
+                                                                    >Location: {subitem.location}</List.Item>
+                                                                </List>
+                                                            </Flex>
+                                                            <Flex
+                                                                gap="xs"
+                                                                // justify="flex-start"
+                                                                // align="flex-start"
+                                                                direction="column"
+                                                                mt='8px'
+                                                                className='item-ctas-lg'
+                                                            >
+                                                                {!subitem.button1Title ? null :
+                                                                    <Button component="a" fullWidth href={subitem.button1Link} rightSection={<IconArrowUpRight size={14} />}>{subitem.button1Title}</Button>
+                                                                }
+                                                                {!subitem.button2Title ? null :
+                                                                    <Button component="a" fullWidth href={subitem.button2Link} rightSection={<IconArrowUpRight size={14} />}>{subitem.button2Title}</Button>
+                                                                }
+                                                                {!subitem.button3Title ? null :
+                                                                    <Button component="a" fullWidth href={subitem.button3Link} rightSection={<IconArrowUpRight size={14} />}>{subitem.button3Title}</Button>
+                                                                }
+                                                            </Flex>
+                                                        </Flex>
+                                                        <Card.Section>
+                                                            <Divider my="sm" />
+                                                        </Card.Section>
+                                                        <Container mx='0px' px='0px'>
+                                                            {subitem?.pageContent && subitem?.pageContent?.map((content) => (
+                                                                <PageContent
+                                                                    page={content}
+                                                                />
+                                                            ))}
+                                                        </Container>
+                                                        {/* <Flex
+                                                            mx='0px'
+                                                            direction='column'
+                                                            gap='0'
+                                                        >
+                                                            {subitem.pageContent.map((content) => (
+                                                                <PageContent
+                                                                    page={content}
+                                                                />
+                                                            ))}
+                                                        </Flex> */}
+                                                    </Card>
+                                                </Timeline.Item>
+                                            </>
+                                        )
+                                    })}
+                                </Timeline>
+                            </>
+                        ))}
+                        <Title order={2}>Staying Options</Title>
+                        {data?.staysListItems?.notionPageData?.databasePages?.map((item) => (
+                            <StaysCardComponent
+                                staysItems={item}
+                            />
+                        ))}
+                    </Flex>
+                </>
+            )}
+
 
 
             
