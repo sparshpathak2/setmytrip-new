@@ -38,8 +38,8 @@ export default async function tripPage({ params }: { params: { slug: string } })
     // console.log(listItems)
 
     // const resList = await fetch(`http://localhost:3000/api/notion-list?slug=${slug}`)
-    const resList = await fetch(`https://setmytrip-qrlo7rbkv-sparshpathak2.vercel.app/api/notion-list?slug=${slug}`)
-    // const resList = await fetch(`${process.env.BASE_URL}/api/notion-list?slug=${slug}`)
+    // const resList = await fetch(`https://setmytrip-qrlo7rbkv-sparshpathak2.vercel.app/api/notion-list?slug=${slug}`)
+    const resList = await fetch(`${process.env.BASE_URL}/api/notion-list?slug=${slug}`)
     // const resList = await fetch(`https://setmytrip-new.vercel.app/api/notion-list?slug=${slug}`)
     const list = await resList.json()
     console.log(list)
@@ -68,15 +68,15 @@ export default async function tripPage({ params }: { params: { slug: string } })
                 // `http://localhost:3000/api/notion-list-items?listid=${listIds[0].id}`,
                 // `http://localhost:3000/api/notion-pages/${listIds[0].id}`,
                 // `http://localhost:3000/api/notion-list-stays?listid=${listIds[0].id}`,
-                `https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-list-items?listid=${listIds[0].id}`,
-                `https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-pages/${listIds[0].id}`,
-                `https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-list-stays?listid=${listIds[0].id}`,
+                // `https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-list-items?listid=${listIds[0].id}`,
+                // `https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-pages/${listIds[0].id}`,
+                // `https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-list-stays?listid=${listIds[0].id}`,
                 // `https://setmytrip-new.vercel.app/api/notion-list-items?listid=${listIds[0].id}`,
                 // `https://setmytrip-new.vercel.app/api/notion-pages/${listIds[0].id}`,
                 // `https://setmytrip-new.vercel.app/api/notion-list-stays?listid=${listIds[0].id}`,
-                // `${process.env.BASE_URL}/api/notion-list-items?listid=${listIds[0].id}`,
-                // `${process.env.BASE_URL}/api/notion-pages/${listIds[0].id}`,
-                // `${process.env.BASE_URL}/api/notion-list-stays?listid=${listIds[0].id}`,
+                `${process.env.BASE_URL}/api/notion-list-items?listid=${listIds[0].id}`,
+                `${process.env.BASE_URL}/api/notion-pages/${listIds[0].id}`,
+                `${process.env.BASE_URL}/api/notion-list-stays?listid=${listIds[0].id}`,
             ];
     
             // Fetch data from multiple endpoints in parallel
