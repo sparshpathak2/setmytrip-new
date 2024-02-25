@@ -54,7 +54,9 @@ export default async function tripPage({ params }: { params: { slug: string } })
         // Add other properties if present in the actual data structure
     }
 
-    const listIds = list.databasePages[0].relations
+    const listIds = list.databasePages[0]?.relations
+
+    console.log(listIds)
 
 
     const fetchData = async (listIds: ListID[]) => {
