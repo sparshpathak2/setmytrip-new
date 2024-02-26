@@ -5,6 +5,7 @@ import { notFound } from "next/navigation"
 import PageContent from "@/components/PageContent/PageContent";
 import { Text, Title, Container, Divider, Center, Flex, Grid, Anchor, Breadcrumbs } from '@/lib/mantineui';
 import { getNotionDatabasePagesBySlugMatch } from "@/lib/notionDatabasePagesBySlugMatch";
+import { getNotionDatabasePagesBySlugMatchTest } from "@/lib/notionDatabasePagesBySlugMatchTest";
 import { getNotionDatabase } from "@/lib/notionDatabase";
 // import { getNotionDatabasePages } from "@/lib/notionDatabasePages";
 import { getNotionDatabasePages } from "@/lib/notionClient";
@@ -13,6 +14,7 @@ import { getNotionPagesDB } from "@/lib/notionPagesDB";
 import { getNotionPageContentById } from "@/lib/notionPageContentById";
 import { Key } from "react";
 import TimelineComponent from "@/components/TimelineComponent/TimelineComponent";
+import { getNotionDatabasePageById } from "@/lib/notionDatabasePageById";
 
 
 export default async function tripPage({ params }: { params: { slug: string } }) {
@@ -27,6 +29,9 @@ export default async function tripPage({ params }: { params: { slug: string } })
     // console.log(notionPage)
     const databasePageBySlugMatch = await getNotionDatabasePagesBySlugMatch(slug)
     // console.log(databasePageBySlugMatch)
+
+    // const testvar = await getNotionDatabasePages('508e27dfb143450ca668b9ee89567328')
+    // console.log(testvar[1].title)
 
     const notionPage = await getNotionPageContentById(databasePageBySlugMatch[0].id)
     // console.log(notionPage)
@@ -110,7 +115,7 @@ export default async function tripPage({ params }: { params: { slug: string } })
     // console.log(itrs)
 
     // console.log(itrs.listItems.notionPageData.notionPage.properties)
-    console.log(itrs.listItems.notionPageData.itrItemsList[0].itrItems)
+    // console.log(itrs.listItems.notionPageData.itrItemsList[0].itrItems)
 
 // TESTING FETCHING DATA ON THE SERVER SIDE END
 

@@ -313,17 +313,11 @@ const TimelineComponent = ({ itrs }) => {
                                                         <Card.Section>
                                                             <AspectRatio ratio={16 / 9} >
                                                                 <Image
-                                                                    src={subitem.thumbnail}
-                                                                    // height={250}
-                                                                    alt="Norway"
-                                                                    // mt="1rem"
-                                                                    // radius="sm"
+                                                                    src={subitem.imageLink}
+                                                                    alt={subitem.title}
                                                                     mb='1rem'
                                                                     p='0px'
                                                                     mx='0px'
-                                                                    // width={500}
-                                                                    // height={500}
-                                                                // className='image-itr-item-sm image-itr-item-md image-itr-item-lg'
                                                                 />
                                                             </AspectRatio>
                                                         </Card.Section>
