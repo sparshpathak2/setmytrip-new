@@ -22,6 +22,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
     images: {
       // domains: ['prod-files-secure.s3.us-west-2.amazonaws.com'],
       domains: ['res.cloudinary.com'],
+      loader: 'cloudinary',
       // remotePatterns: [
       //   {
       //     protocol: 'https',
