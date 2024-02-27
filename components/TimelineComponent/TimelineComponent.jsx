@@ -331,8 +331,8 @@ const TimelineComponent = ({ itrs }) => {
                                                                 <CldImage
                                                                     width="600"
                                                                     height="600"
-                                                                    src="https://res.cloudinary.com/dq36cwhqs/image/upload/v1708964390/SMT/Albuquerque_Trolley_bazeuq.webp"
-                                                                    // src={subitem.imageLink}
+                                                                    // src="https://res.cloudinary.com/dq36cwhqs/image/upload/v1708964390/SMT/Albuquerque_Trolley_bazeuq.webp"
+                                                                    src={subitem.imageLink}
                                                                 />
                                                             </AspectRatio>
                                                         </Card.Section>
