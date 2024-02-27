@@ -124,8 +124,9 @@ export default async function tripPage({ params }: { params: { slug: string } })
 
 
     const breadCrumbs = [
-        { title: "Home", href: '/' },
-        { title: "Trips", href: '/trips' },
+        { title: "Home", href: '' },
+        // { title: "Trips", href: '/trips' },
+        { title: "Trips", href: '' },
         { title: `${list.databasePages[0].breadcrumb}`, href: '' }
     ].map((item, index) => (
         <Anchor href={item.href} key={index}>
