@@ -1,4 +1,5 @@
 'use client'
+import { CldImage } from 'next-cloudinary';
 import { Timeline, Image, Text, Title, Container, ThemeIcon, List, Flex, Badge, Divider, Button, Card, AspectRatio, Center, CardSection } from '@/lib/mantineui';
 import '@/styles/globals.css';
 import { IconArrowUpRight, IconCalendar, IconCalendarEvent, IconCircleCheck, IconCircleDashed, IconCreditCard, IconDots, IconDownload, IconHeart, IconMapPin, IconPoint, IconPointFilled, IconRoad, IconStarFilled, IconUserHeart, IconUsers } from '@tabler/icons-react';
@@ -316,9 +317,9 @@ const TimelineComponent = ({ itrs }) => {
                                                                     src={subitem.imageLink}
                                                                     // src="https://res.cloudinary.com/dq36cwhqs/image/upload/v1708964390/SMT/Albuquerque_Trolley_bazeuq.webp"
                                                                     alt={subitem.title}
-                                                                    // mb='1rem'
-                                                                    // p='0px'
-                                                                    // mx='0px'
+                                                                // mb='1rem'
+                                                                // p='0px'
+                                                                // mx='0px'
                                                                 />
                                                                 {/* <img src={subitem.imageLink} alt={subitem.title} /> */}
                                                                 {/* <Image
@@ -327,6 +328,11 @@ const TimelineComponent = ({ itrs }) => {
                                                                     height={500}
                                                                     alt="Picture of the author"
                                                                 /> */}
+                                                                <CldImage
+                                                                    width="600"
+                                                                    height="600"
+                                                                    src="https://res.cloudinary.com/dq36cwhqs/image/upload/v1708964390/SMT/Albuquerque_Trolley_bazeuq.webp"
+                                                                />
                                                             </AspectRatio>
                                                         </Card.Section>
 
