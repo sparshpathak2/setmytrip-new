@@ -7,8 +7,8 @@ import { Text, Title, Container, Divider, Center, Flex, Grid, Anchor, Breadcrumb
 import { getNotionDatabasePagesBySlugMatch } from "@/lib/notionDatabasePagesBySlugMatch";
 import { getNotionDatabasePagesBySlugMatchTest } from "@/lib/notionDatabasePagesBySlugMatchTest";
 import { getNotionDatabase } from "@/lib/notionDatabase";
-// import { getNotionDatabasePages } from "@/lib/notionDatabasePages";
-import { getNotionDatabasePages } from "@/lib/notionClient";
+import { getNotionDatabasePages } from "@/lib/notionDatabasePages";
+// import { getNotionDatabasePages } from "@/lib/notionClient";
 import { getNotionDatabasePages2 } from "@/lib/notionClient2";
 import { getNotionPagesDB } from "@/lib/notionPagesDB";
 import { getNotionPageContentById } from "@/lib/notionPageContentById";
@@ -30,8 +30,11 @@ export default async function tripPage({ params }: { params: { slug: string } })
     const databasePageBySlugMatch = await getNotionDatabasePagesBySlugMatch(slug)
     // console.log(databasePageBySlugMatch)
 
-    // const testvar = await getNotionDatabasePages('508e27dfb143450ca668b9ee89567328')
-    // console.log(testvar[0].imageLink)
+    // const testvar = await getNotionDatabasePages()
+    // console.log(testvar)
+
+    // const testvar2 = await getNotionDatabasePages('508e27dfb143450ca668b9ee89567328')
+    // console.log(testvar2)
 
     const notionPage = await getNotionPageContentById(databasePageBySlugMatch[0].id)
     // console.log(notionPage)

@@ -315,6 +315,7 @@ const TimelineComponent = ({ itrs }) => {
 
                                                         <Card.Section>
                                                             <Text>{subitem.imageLink}</Text>
+                                                            <Text>{subitem.thumbnail}</Text>
                                                             <AspectRatio ratio={16 / 9} >
                                                                 {/* <Image
                                                                     src={subitem.imageLink}
@@ -336,6 +337,7 @@ const TimelineComponent = ({ itrs }) => {
                                                                     height="600"
                                                                     // src="https://res.cloudinary.com/dq36cwhqs/image/upload/v1708964390/SMT/Albuquerque_Trolley_bazeuq.webp"
                                                                     src={subitem.imageLink}
+                                                                    // src={subitem.thumbnail}
                                                                     alt={subitem.title}
                                                                 />
                                                             </AspectRatio>

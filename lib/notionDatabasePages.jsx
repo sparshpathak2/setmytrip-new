@@ -48,7 +48,7 @@ export async function getNotionDatabasePages() {
             button3Title: propertiesById[process.env.NOTION_ITR_ITEM_BUTTON3]?.rich_text[0]?.plain_text,
             button3Link: propertiesById[process.env.NOTION_ITR_ITEM_BUTTON3]?.rich_text[0]?.url,
             // pageContent: notionPageContent
-            
+        
             
             // city_tags: propertiesById[process.env.NOTION_CITY_ID].select.map(option => {
             //     return {
@@ -79,6 +79,7 @@ export async function getNotionDatabasePages() {
             console.log(notionPages.statusText)
         }
         // return notionPages.results[0].properties['Image Link']
+        // return notionPages.results[0].properties
         // return notionPages
         // return {
         //     listUrl : response.results[0].url,
