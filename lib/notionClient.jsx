@@ -33,13 +33,13 @@ export async function getNotionDatabasePages(query) {
             personalizedRecommendation: propertiesById[process.env.NOTION_ITR_ITEM_RECOMMENDATION]?.rich_text[0]?.plain_text,
             // relations: propertiesById[process.env.NOTION_PAGE_RELATION].relation,
             thumbnail: propertiesById[process.env.NOTION_ITR_ITEM_IMAGE]?.files[0]?.file?.url,
-            imageLink: propertiesById[process.env.NOTION_ITR_ITEM_IMAGE_LINK]?.rich_text[0]?.plain_text,
+            imageLink: propertiesById[process.env.NOTION_ITR_ITEM_IMAGE_LINK]?.rich_text[0]?.href,
             button1Title: propertiesById[process.env.NOTION_ITR_ITEM_BUTTON1]?.rich_text[0]?.plain_text,
             button1Link: propertiesById[process.env.NOTION_ITR_ITEM_BUTTON1]?.rich_text[0]?.href,
             button2Title: propertiesById[process.env.NOTION_ITR_ITEM_BUTTON2]?.rich_text[0]?.plain_text,
             button2Link: propertiesById[process.env.NOTION_ITR_ITEM_BUTTON2]?.rich_text[0]?.href,
             button3Title: propertiesById[process.env.NOTION_ITR_ITEM_BUTTON3]?.rich_text[0]?.plain_text,
-            button3Link: propertiesById[process.env.NOTION_ITR_ITEM_BUTTON3]?.rich_text[0]?.url,
+            button3Link: propertiesById[process.env.NOTION_ITR_ITEM_BUTTON3]?.rich_text[0]?.href,
             pageContent: notionPageContent
             
             
