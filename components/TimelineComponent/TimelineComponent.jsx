@@ -333,6 +333,7 @@ const TimelineComponent = ({ itrs }) => {
                                                                     height="600"
                                                                     // src="https://res.cloudinary.com/dq36cwhqs/image/upload/v1708964390/SMT/Albuquerque_Trolley_bazeuq.webp"
                                                                     src={subitem.imageLink}
+                                                                    alt={subitem.title}
                                                                 />
                                                             </AspectRatio>
                                                         </Card.Section>
