@@ -22,7 +22,6 @@ export default async function tripPage({ params }: { params: { slug: string } })
     const { slug } = params
 
     const ndbpages = await getNotionPagesDB()
-    // console.log(ndbpages)
 
     const ndb = await getNotionDatabase()
     // const notionPage = await getNotionPage()
