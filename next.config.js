@@ -21,7 +21,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
     // },
     images: {
       // domains: ['prod-files-secure.s3.us-west-2.amazonaws.com'],
-      domains: ['res.cloudinary.com'],
+      domains: ['res.cloudinary.com', 'https://www.setmytrip.co'],
       loader: 'cloudinary',
       // remotePatterns: [
       //   {
