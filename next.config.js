@@ -22,15 +22,16 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
     images: {
       // domains: ['prod-files-secure.s3.us-west-2.amazonaws.com'],
       domains: ['res.cloudinary.com', 'https://www.setmytrip.co'],
-      loader: 'cloudinary',
-      // remotePatterns: [
-      //   {
-      //     protocol: 'https',
-      //     hostname: 'assets.example.com',
-      //     port: '',
-      //     pathname: '/account123/**',
-      //   },
-      // ],
+      // loader: 'cloudinary',
+      formats: ["image/webp"],
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: "**",
+          // port: '',
+          // pathname: '/account123/**',
+        },
+      ],
     },
   
   });
