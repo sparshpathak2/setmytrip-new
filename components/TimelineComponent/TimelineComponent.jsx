@@ -81,6 +81,7 @@ const TimelineComponent = ({ itrs }) => {
     // const listIds = itrs[0].relations
     //   console.log(listIds[0].id)
     // console.log(stays)
+    console.log(itrs?.listItems?.notionPageData?.itrItemsList?.itrItems[0]?.imageLink)
 
     // const [listItems, setListItems] = useState([])
     // const [list, setList] = useState(null)
