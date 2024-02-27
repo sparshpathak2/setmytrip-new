@@ -82,7 +82,7 @@ const TimelineComponent = ({ itrs }) => {
     //   console.log(listIds[0].id)
     // console.log(stays)
     // console.log(itrs?.listItems?.notionPageData?.itrItemsList[0]?.itrItems[0]?.imageLink)
-    console.log(itrs?.listItems?.notionPageData?.itrItemsList[0]?.itrItems[0]?.title)
+    console.log(itrs?.listItems?.notionPageData?.itrItemsList[0]?.itrItems[0]?.imageLink)
 
     // const [listItems, setListItems] = useState([])
     // const [list, setList] = useState(null)
