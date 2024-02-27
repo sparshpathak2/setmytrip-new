@@ -82,7 +82,7 @@ const TimelineComponent = ({ itrs }) => {
     //   console.log(listIds[0].id)
     // console.log(stays)
     // console.log(itrs?.listItems?.notionPageData?.itrItemsList[0]?.itrItems[0]?.imageLink)
-    console.log(itrs?.listItems?.notionPageData?.itrItemsList)
+    console.log(itrs?.listItems?.notionPageData?.itrItemsList[0]?.itrItems[0]?.title)
 
     // const [listItems, setListItems] = useState([])
     // const [list, setList] = useState(null)
@@ -336,8 +336,8 @@ const TimelineComponent = ({ itrs }) => {
                                                                     width="600"
                                                                     height="600"
                                                                     // src="https://res.cloudinary.com/dq36cwhqs/image/upload/v1708964390/SMT/Albuquerque_Trolley_bazeuq.webp"
-                                                                    // src={subitem.imageLink}
-                                                                    src={subitem.thumbnail}
+                                                                    src={subitem.imageLink}
+                                                                    // src={subitem.thumbnail}
                                                                     alt={subitem.title}
                                                                 />
                                                             </AspectRatio>
