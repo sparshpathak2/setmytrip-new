@@ -20,7 +20,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
     //   domains: ['prod-files-secure.s3.us-west-2.amazonaws.com'],
     // },
     images: {
-      // domains: ['prod-files-secure.s3.us-west-2.amazonaws.com'],
       domains: ['res.cloudinary.com'],
       // loader: 'cloudinary',
       // formats: ["image/webp"],
@@ -37,6 +36,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   });
   
   
-  const withVideos = require('next-videos')
+  // const withVideos = require('next-videos')
   
-  module.exports = withVideos()
+  // module.exports = withVideos()
