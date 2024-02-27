@@ -314,6 +314,7 @@ const TimelineComponent = ({ itrs }) => {
                                                         {/* <Title order={3}>{page.title}</Title> */}
 
                                                         <Card.Section>
+                                                            <Text>{subitem.imageLink}</Text>
                                                             <AspectRatio ratio={16 / 9} >
                                                                 {/* <Image
                                                                     src={subitem.imageLink}
