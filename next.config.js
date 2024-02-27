@@ -20,15 +20,16 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
     //   domains: ['prod-files-secure.s3.us-west-2.amazonaws.com'],
     // },
     images: {
-      domains: ['prod-files-secure.s3.us-west-2.amazonaws.com'],
-      remotePatterns: [
-        {
-          protocol: 'https',
-          hostname: 'assets.example.com',
-          port: '',
-          pathname: '/account123/**',
-        },
-      ],
+      // domains: ['prod-files-secure.s3.us-west-2.amazonaws.com'],
+      domains: ['res.cloudinary.com'],
+      // remotePatterns: [
+      //   {
+      //     protocol: 'https',
+      //     hostname: 'assets.example.com',
+      //     port: '',
+      //     pathname: '/account123/**',
+      //   },
+      // ],
     },
   
   });
