@@ -366,6 +366,7 @@ const TimelineComponent = ({ itrs }) => {
                                                                 wrap="wrap">
                                                                 <IconUserHeart style={{ width: '20px', height: '20px', color: "#228be6" }} />
                                                                 <Text fw='600'>{subitem.rating}/5</Text>
+                                                                <Text>{subitem.imageLink}</Text>
                                                                 {/* <IconStarFilled style={{ width: '20px', height: '20px', color: "#228be6" }}/> */}
                                                             </Flex>
                                                         </Flex>
