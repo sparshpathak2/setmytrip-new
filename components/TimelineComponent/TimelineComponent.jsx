@@ -271,7 +271,7 @@ const TimelineComponent = ({ itrs }) => {
                         <Divider className='divider-sm divider-md divider-lg' />
 
 
-                        {itrs?.listItems?.notionPageData.itrItemsList?.map((item) => (
+                        {itrs?.listItems?.notionPageData?.itrItemsList?.map((item) => (
                             <>
 
                                 <Flex
@@ -292,7 +292,7 @@ const TimelineComponent = ({ itrs }) => {
 
                                 <Timeline active={10} className='timeline-sm timeline-md timeline-lg' lineWidth={2}>
 
-                                    {item?.itrItems.map((subitem) => {
+                                    {item?.itrItems?.map((subitem) => {
                                         return (
                                             <>
                                                 <Timeline.Item variant='' className='timeline-title timeline-bullet-sm' title={subitem.title} mt='0px'>
@@ -312,14 +312,15 @@ const TimelineComponent = ({ itrs }) => {
 
                                                         <Card.Section>
                                                             <AspectRatio ratio={16 / 9} >
-                                                                <Image
+                                                                {/* <Image
                                                                     src={subitem.imageLink}
                                                                     // src="https://res.cloudinary.com/dq36cwhqs/image/upload/v1708964390/SMT/Albuquerque_Trolley_bazeuq.webp"
                                                                     alt={subitem.title}
                                                                     mb='1rem'
                                                                     p='0px'
                                                                     mx='0px'
-                                                                />
+                                                                /> */}
+                                                                <img src={subitem.imageLink} alt={subitem.title} />
                                                             </AspectRatio>
                                                         </Card.Section>
 
