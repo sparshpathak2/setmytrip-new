@@ -336,8 +336,8 @@ const TimelineComponent = ({ itrs }) => {
                                                                     width="600"
                                                                     height="600"
                                                                     cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
-                                                                    src="https://res.cloudinary.com/dq36cwhqs/image/upload/v1708964390/SMT/Albuquerque_Trolley_bazeuq.webp"
-                                                                    // src={subitem.imageLink}
+                                                                    // src="https://res.cloudinary.com/dq36cwhqs/image/upload/v1708964390/SMT/Albuquerque_Trolley_bazeuq.webp"
+                                                                    src={subitem.imageLink}
                                                                     // publicId="SMT/Albuquerque_Trolley_bazeuq"
                                                                     // publicId={subitem.imageLink}
                                                                     // src={subitem.thumbnail}
