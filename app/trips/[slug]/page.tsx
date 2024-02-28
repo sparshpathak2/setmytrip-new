@@ -95,9 +95,12 @@ export default async function tripPage({ params }: { params: { slug: string } })
                 // `https://setmytrip-new.vercel.app/api/notion-list-items?listid=${listIds[0].id}`,
                 // `https://setmytrip-new.vercel.app/api/notion-pages/${listIds[0].id}`,
                 // `https://setmytrip-new.vercel.app/api/notion-list-stays?listid=${listIds[0].id}`,
-                `${process.env.BASE_URL}/api/notion-list-items?listid=${listIds[0].id}`,
-                `${process.env.BASE_URL}/api/notion-pages/${listIds[0].id}`,
-                `${process.env.BASE_URL}/api/notion-list-stays?listid=${listIds[0].id}`,
+                // `${process.env.BASE_URL}/api/notion-list-items?listid=${listIds[0].id}`,
+                // `${process.env.BASE_URL}/api/notion-pages/${listIds[0].id}`,
+                // `${process.env.BASE_URL}/api/notion-list-stays?listid=${listIds[0].id}`,
+                `https://setmytrip.co/api/notion-list-items?listid=${listIds[0].id}`,
+                `https://setmytrip.co/api/notion-pages/${listIds[0].id}`,
+                `https://setmytrip.co/api/notion-list-stays?listid=${listIds[0].id}`,
             ];
     
             // Fetch data from multiple endpoints in parallel
