@@ -60,7 +60,9 @@ export default async function tripPage({ params }: { params: { slug: string } })
 
     // const resList = await fetch(`http://localhost:3000/api/notion-list?slug=${slug}`)
     // const resList = await fetch(`https://setmytrip-qrlo7rbkv-sparshpathak2.vercel.app/api/notion-list?slug=${slug}`)
-    const resList = await fetch(`${process.env.BASE_URL}/api/notion-list?slug=${slug}`)
+    const resList = await fetch(`${process.env.BASE_URL}/api/notion-list?slug=${slug}`, {
+        cache: "no-store"
+    })
     // const resList = await fetch(`https://setmytrip-new.vercel.app/api/notion-list?slug=${slug}`)
     const list = await resList.json()
     // console.log(list)
@@ -102,7 +104,9 @@ export default async function tripPage({ params }: { params: { slug: string } })
     
             // Fetch data from multiple endpoints in parallel
             const responses = await Promise.all(
-                urls.map(url => fetch(url))
+                urls.map(url => fetch(url, {
+                    cache: "no-store"
+                }))
             );
     
             // Check if any response is not successful
