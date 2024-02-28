@@ -318,7 +318,6 @@ const TimelineComponent = ({ itrs }) => {
                                                             <AspectRatio ratio={16 / 9} >
                                                                 <Image
                                                                     src={subitem.imageLink}
-                                                                    // src="https://res.cloudinary.com/dq36cwhqs/image/upload/v1708964390/SMT/Albuquerque_Trolley_bazeuq.webp"
                                                                     alt={subitem.title}
                                                                 // mb='1rem'
                                                                 // p='0px'

@@ -32,8 +32,11 @@ import { HeaderMenu } from '@/components/HeaderMenu/HeaderMenu';
 import { FooterMenu } from '@/components/FooterMenu/FooterMenu';
 
 export const metadata = {
-  title: 'My Mantine app',
-  description: 'I have followed setup instructions carefully',
+  title: {
+    default: "SetMyTrip: The Trips Just Planned for You",
+    template: "%s - SetMyTrip"
+  },
+  description: 'The most comprehensive itineraries on your fingertips.',
 };
 
 export default function RootLayout({

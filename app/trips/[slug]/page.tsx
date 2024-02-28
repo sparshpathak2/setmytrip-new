@@ -17,16 +17,16 @@ import TimelineComponent from "@/components/TimelineComponent/TimelineComponent"
 import { getNotionDatabasePageById } from "@/lib/notionDatabasePageById";
 import generateMetdata, { Metadata } from 'next'
 
-// export async function getAllPagesData({ params }: { params: { slug: string } }){
-//     const { slug } = params
-//     const allPagesData = await getNotionDatabasePagesBySlugMatch(slug)
-//     console.log(allPagesData)
-// }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+    const { slug } = params
+    
+    const pageMetadata = await getNotionDatabasePagesBySlugMatch(slug)
+    // console.log(pageMetadata[0].metaDescription)
+
     return {
-        title: "This is dynamic title",
-        description: "This is dynamic description"
+        title: pageMetadata[0].pageTitle,
+        description: pageMetadata[0].metaDescription,
     }
 }
 
@@ -43,8 +43,12 @@ export default async function tripPage({ params }: { params: { slug: string } })
     const databasePageBySlugMatch = await getNotionDatabasePagesBySlugMatch(slug)
     // console.log(databasePageBySlugMatch)
 
-    const testvar = await getNotionDatabasePages()
-    console.log(testvar)
+    const testvar2 = await getNotionDatabasePagesBySlugMatchTest(slug)
+    // console.log(testvar2)
+
+
+    const testvar1 = await getNotionDatabasePages()
+    // console.log(testvar1)
 
     // const testvar2 = await getNotionDatabasePages('508e27dfb143450ca668b9ee89567328')
     // console.log(testvar2)
