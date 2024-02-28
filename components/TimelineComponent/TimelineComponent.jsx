@@ -449,7 +449,7 @@ const TimelineComponent = ({ itrs }) => {
                                                                     <Button component="a" fullWidth href={subitem.button2Link} rightSection={<IconArrowUpRight size={14} />}>{subitem.button2Title}</Button>
                                                                 }
                                                                 {!subitem.button3Title ? null :
-                                                                    <Button component="a" fullWidth href={subitem.button3Link} rightSection={<IconArrowUpRight size={14} />}>{subitem.button3Title}</Button>
+                                                                    <Button component="a" fullWidth href={subitem.button1Link} rightSection={<IconArrowUpRight size={14} />}>{subitem.button3Title}</Button>
                                                                 }
                                                             </Flex>
                                                         </Flex>
