@@ -15,6 +15,20 @@ import { getNotionPageContentById } from "@/lib/notionPageContentById";
 import { Key } from "react";
 import TimelineComponent from "@/components/TimelineComponent/TimelineComponent";
 import { getNotionDatabasePageById } from "@/lib/notionDatabasePageById";
+import generateMetdata, { Metadata } from 'next'
+
+// export async function getAllPagesData({ params }: { params: { slug: string } }){
+//     const { slug } = params
+//     const allPagesData = await getNotionDatabasePagesBySlugMatch(slug)
+//     console.log(allPagesData)
+// }
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+    return {
+        title: "This is dynamic title",
+        description: "This is dynamic description"
+    }
+}
 
 
 export default async function tripPage({ params }: { params: { slug: string } }) {
@@ -198,3 +212,4 @@ export default async function tripPage({ params }: { params: { slug: string } })
         </>
     )
 }
+
