@@ -314,36 +314,29 @@ const TimelineComponent = ({ itrs }) => {
                                                         {/* <Title order={3}>{page.title}</Title> */}
 
                                                         <Card.Section>
-                                                            <Text>{subitem.imageLink}</Text>
                                                             {/* <Text>{subitem.thumbnail}</Text> */}
                                                             <AspectRatio ratio={16 / 9} >
-                                                                {/* <Image
+                                                                <Image
                                                                     src={subitem.imageLink}
                                                                     // src="https://res.cloudinary.com/dq36cwhqs/image/upload/v1708964390/SMT/Albuquerque_Trolley_bazeuq.webp"
                                                                     alt={subitem.title}
                                                                 // mb='1rem'
                                                                 // p='0px'
                                                                 // mx='0px'
-                                                                /> */}
-                                                                {/* <img src={subitem.imageLink} alt={subitem.title} /> */}
+                                                                />
                                                                 {/* <Image
                                                                     src={subitem.imageLink}
                                                                     width={500}
                                                                     height={500}
                                                                     alt="Picture of the author"
                                                                 /> */}
-                                                                <CldImage
+                                                                {/* <CldImage
                                                                     width="600"
                                                                     height="600"
-                                                                    cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
-                                                                    // src="https://res.cloudinary.com/dq36cwhqs/image/upload/v1708964390/SMT/Albuquerque_Trolley_bazeuq.webp"
+                                                                    // cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
                                                                     src={subitem.imageLink}
-                                                                    // publicId="SMT/Albuquerque_Trolley_bazeuq"
-                                                                    // publicId={subitem.imageLink}
-                                                                    // src={subitem.thumbnail}
                                                                     alt={subitem.title}
-
-                                                                />
+                                                                /> */}
                                                             </AspectRatio>
                                                         </Card.Section>
 
@@ -370,7 +363,6 @@ const TimelineComponent = ({ itrs }) => {
                                                                 wrap="wrap">
                                                                 <IconUserHeart style={{ width: '20px', height: '20px', color: "#228be6" }} />
                                                                 <Text fw='600'>{subitem.rating}/5</Text>
-                                                                <Text>{subitem.city}</Text>
                                                                 {/* <IconStarFilled style={{ width: '20px', height: '20px', color: "#228be6" }}/> */}
                                                             </Flex>
                                                         </Flex>
