@@ -43,8 +43,8 @@ export default async function tripPage({ params }: { params: { slug: string } })
     const databasePageBySlugMatch = await getNotionDatabasePagesBySlugMatch(slug)
     // console.log(databasePageBySlugMatch)
 
-    // const testvar = await getNotionDatabasePages()
-    // console.log(testvar)
+    const testvar = await getNotionDatabasePages()
+    console.log(testvar)
 
     // const testvar2 = await getNotionDatabasePages('508e27dfb143450ca668b9ee89567328')
     // console.log(testvar2)

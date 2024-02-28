@@ -370,7 +370,7 @@ const TimelineComponent = ({ itrs }) => {
                                                                 wrap="wrap">
                                                                 <IconUserHeart style={{ width: '20px', height: '20px', color: "#228be6" }} />
                                                                 <Text fw='600'>{subitem.rating}/5</Text>
-                                                                <Text>{subitem.imageLink}</Text>
+                                                                <Text>{subitem.city}</Text>
                                                                 {/* <IconStarFilled style={{ width: '20px', height: '20px', color: "#228be6" }}/> */}
                                                             </Flex>
                                                         </Flex>
@@ -449,7 +449,7 @@ const TimelineComponent = ({ itrs }) => {
                                                                     <Button component="a" fullWidth href={subitem.button2Link} rightSection={<IconArrowUpRight size={14} />}>{subitem.button2Title}</Button>
                                                                 }
                                                                 {!subitem.button3Title ? null :
-                                                                    <Button component="a" fullWidth href={subitem.button1Link} rightSection={<IconArrowUpRight size={14} />}>{subitem.button3Title}</Button>
+                                                                    <Button component="a" fullWidth href={subitem.button3Link} rightSection={<IconArrowUpRight size={14} />}>{subitem.button3Title}</Button>
                                                                 }
                                                             </Flex>
                                                         </Flex>
