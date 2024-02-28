@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     return {
         title: pageMetadata[0].pageTitle,
         description: pageMetadata[0].metaDescription,
+        robots: 'index, follow',
     }
 }
 

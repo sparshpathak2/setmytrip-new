@@ -37,6 +37,7 @@ export const metadata = {
     template: "%s - SetMyTrip"
   },
   description: 'The most comprehensive itineraries on your fingertips.',
+  robots: 'index, follow',
 };
 
 export default function RootLayout({
