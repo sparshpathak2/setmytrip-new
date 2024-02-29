@@ -2,9 +2,16 @@ import { getNotionPageContentById } from "@/lib/notionPageContentById";
 import { Text, Title, Container, Divider, Center, Flex, Grid, Anchor, Breadcrumbs } from '@/lib/mantineui';
 import PageContent from "@/components/PageContent/PageContent";
 
+export const metadata = {
+    title: {
+        default: "About Kevin Cotter",
+    },
+    robots: 'index, follow',
+};
+
 export default async function aboutKevinCotter() {
     const pageContents = await getNotionPageContentById('157d328b106649dbb9e7907b6e58d036')
-    console.log(pageContents)
+    // console.log(pageContents)
 
     const breadCrumbs = [
         { title: "Home", href: '/' },
@@ -39,19 +46,19 @@ export default async function aboutKevinCotter() {
                 </Flex>
             </Flex>
             <Divider />
-            
+
             <Container
                 px={{ base: '10px', sm: '10px', md: '80px', lg: '160px' }}
                 pb={{ base: '32px', sm: '32px', md: '56px', lg: '48px' }}
                 pt={{ base: '32px', sm: '32px', md: '48px', lg: '48px' }}
             >
                 {pageContents?.map((item) => (
-                            <div key={item.id}>
-                                <PageContent
-                                    page={{ ...item, content: item.content }}
-                                />
-                            </div>
-                        ))}
+                    <div key={item.id}>
+                        <PageContent
+                            page={{ ...item, content: item.content }}
+                        />
+                    </div>
+                ))}
             </Container>
         </>
     )

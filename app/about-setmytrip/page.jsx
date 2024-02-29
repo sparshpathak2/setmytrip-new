@@ -2,9 +2,16 @@ import { getNotionPageContentById } from "@/lib/notionPageContentById";
 import { Text, Title, Container, Divider, Center, Flex, Grid, Anchor, Breadcrumbs } from '@/lib/mantineui';
 import PageContent from "@/components/PageContent/PageContent";
 
+export const metadata = {
+    title: {
+        default: "About SetMyTrip",
+    },
+    robots: 'index, follow',
+};
+
 export default async function aboutKevinCotter() {
     const pageContents = await getNotionPageContentById('92c1b432c2054e1191fec5ef68d10459')
-    console.log(pageContents)
+    // console.log(pageContents)
 
     const breadCrumbs = [
         { title: "Home", href: '/' },
@@ -29,7 +36,7 @@ export default async function aboutKevinCotter() {
                     order={1}
                     px={{ base: '16px', sm: '16px', md: '40px', lg: '240px' }}
                 >
-                    About Kevin Cotter
+                    About SetMyTrip
                 </Title>
                 <Flex gap='4px'>
                     <Text>Posted by:</Text>
