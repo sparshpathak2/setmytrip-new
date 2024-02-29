@@ -20,7 +20,7 @@ import generateMetdata, { Metadata } from 'next'
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const { slug } = params
-    
+
     const pageMetadata = await getNotionDatabasePagesBySlugMatch(slug)
     // console.log(pageMetadata[0].metaDescription)
 
@@ -74,7 +74,7 @@ export default async function tripPage({ params }: { params: { slug: string } })
 
 
 
-// TESTING FETCHING DATA ON THE SERVER SIDE START
+    // TESTING FETCHING DATA ON THE SERVER SIDE START
 
 
     interface ListID {
@@ -107,24 +107,24 @@ export default async function tripPage({ params }: { params: { slug: string } })
                 `https://setmytrip.co/api/notion-pages/${listIds[0].id}`,
                 `https://setmytrip.co/api/notion-list-stays?listid=${listIds[0].id}`,
             ];
-    
+
             // Fetch data from multiple endpoints in parallel
             const responses = await Promise.all(
                 urls.map(url => fetch(url))
             );
-    
+
             // Check if any response is not successful
             for (const response of responses) {
                 if (!response.ok) {
                     throw new Error(`Failed to fetch data: ${response.statusText}`);
                 }
             }
-    
+
             // Parse JSON data from responses
             const [listItems, pageData, staysListItems] = await Promise.all(
                 responses.map(response => response.json())
             );
-    
+
             return { listItems, pageData, staysListItems };
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -141,14 +141,14 @@ export default async function tripPage({ params }: { params: { slug: string } })
     // console.log(itrs.listItems.notionPageData.notionPage.properties)
     // console.log(itrs.listItems.notionPageData.itrItemsList[0].itrItems)
 
-// TESTING FETCHING DATA ON THE SERVER SIDE END
+    // TESTING FETCHING DATA ON THE SERVER SIDE END
 
 
 
 
 
     const breadCrumbs = [
-        { title: "Home", href: '' },
+        { title: "Home", href: '/' },
         // { title: "Trips", href: '/trips' },
         { title: "Trips", href: '' },
         { title: `${list.databasePages[0].breadcrumb}`, href: '' }
@@ -188,24 +188,13 @@ export default async function tripPage({ params }: { params: { slug: string } })
                     <Divider />
                     <Container
                         px={{ base: '10px', sm: '10px', md: '80px', lg: '160px' }}
-                        pb={{ base: '32px', sm: '32px', md: '56px', lg: '56px' }}
+                        pb={{ base: '32px', sm: '32px', md: '56px', lg: '48px' }}
+                        pt={{ base: '32px', sm: '32px', md: '48px', lg: '48px' }}
                     // className="container-main-content-sm container-main-content-md container-main-content-lg"
                     >
                         {notionPage?.map((item: { id: Key | null | undefined; type: string; content?: string }) => (
                             <div key={item.id}>
                                 {item.type == "link_to_page" ? (
-                                    // <TimelineComponentOld
-                                    //     // dbPages={listItems.databasePages}
-                                    //     // itrIds={pageItrs}
-                                    //     // pageTitle={databasePageBySlugMatchTitle} 
-                                    //     // pageId={databasePageBySlugMatchId}
-                                    //     itrs={list.databasePages}
-                                    // // stays={staysList}
-                                    // />
-                                    // null
-                                    // <TimelineComponent
-                                    //     itrs={list.databasePages}
-                                    // />
                                     <TimelineComponent
                                         itrs={itrs}
                                     />
