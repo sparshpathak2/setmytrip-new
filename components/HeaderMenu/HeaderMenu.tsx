@@ -12,8 +12,8 @@ import Link from 'next/link';
 
 
 const links = [
-  // { link: '/about-kevin-cotter', label: 'About Kevin Cotter' },
-  // { link: '/about-setmytrip', label: 'About SetMyTrip' },
+  { link: '/about-kevin-cotter', label: 'About Kevin Cotter' },
+  { link: '/about-setmytrip', label: 'About SetMyTrip' },
   {
     link: '#1',
     label: 'About',
