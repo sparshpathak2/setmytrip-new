@@ -44,7 +44,7 @@ export function HeaderMenu() {
 
   const items = links.map((link) => {
     const menuItems = link.links?.map((item) => (
-      <Menu.Item key={item.link}>{item.label}</Menu.Item>
+      <Menu.Item component="a" key={item.link} href={item.link}>{item.label}</Menu.Item>
     ));
 
     if (menuItems) {
@@ -61,13 +61,6 @@ export function HeaderMenu() {
                 <IconChevronDown size="0.9rem" stroke={1.5} />
               </Center>
             </a>
-
-            {/* <Link href={link.link} className={classes.link} passHref>
-              <Center>
-                <span className={classes.linkLabel}>{link.label}</span>
-                <IconChevronDown size="0.9rem" stroke={1.5} />
-              </Center>
-            </Link> */}
           </Menu.Target>
           <Menu.Dropdown>{menuItems}</Menu.Dropdown>
         </Menu>
