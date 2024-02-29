@@ -51,7 +51,7 @@ export function HeaderMenu() {
       return (
         <Menu key={link.label} trigger="hover" transitionProps={{ exitDuration: 0 }} withinPortal>
           <Menu.Target>
-            <a
+            {/* <a
               href={link.link}
               className={classes.link}
               // onClick={(event) => event.preventDefault()}
@@ -60,7 +60,13 @@ export function HeaderMenu() {
                 <span className={classes.linkLabel}>{link.label}</span>
                 <IconChevronDown size="0.9rem" stroke={1.5} />
               </Center>
-            </a>
+            </a> */}
+            <Link className={classes.link} href={link.link} passHref>
+              <Center>
+                <span className={classes.linkLabel}>{link.label}</span>
+                <IconChevronDown size="0.9rem" stroke={1.5} />
+              </Center>
+            </Link>
           </Menu.Target>
           <Menu.Dropdown>{menuItems}</Menu.Dropdown>
         </Menu>
