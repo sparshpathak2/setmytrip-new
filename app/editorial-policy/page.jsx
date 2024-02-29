@@ -6,6 +6,7 @@ export const metadata = {
     title: {
         default: "Editorial Policy",
     },
+    description: 'Editorial Policy SetMyTrip',
     robots: 'index, follow',
 };
 
@@ -48,9 +49,9 @@ export default async function aboutKevinCotter() {
             <Divider />
             
             <Container
-                px={{ base: '10px', sm: '10px', md: '80px', lg: '160px' }}
-                pb={{ base: '32px', sm: '32px', md: '56px', lg: '48px' }}
-                pt={{ base: '32px', sm: '32px', md: '48px', lg: '48px' }}
+                px={{ base: '12px', sm: '12px', md: '80px', lg: '160px' }}
+                pb={{ base: '32px', sm: '32px', md: '16px', lg: '32px' }}
+                pt={{ base: '8px', sm: '8px', md: '16px', lg: '16px' }}
             >
                 {pageContents?.map((item) => (
                             <div key={item.id}>

@@ -187,9 +187,9 @@ export default async function tripPage({ params }: { params: { slug: string } })
                     </Flex>
                     <Divider />
                     <Container
-                        px={{ base: '10px', sm: '10px', md: '80px', lg: '160px' }}
-                        pb={{ base: '32px', sm: '32px', md: '56px', lg: '48px' }}
-                        pt={{ base: '32px', sm: '32px', md: '48px', lg: '48px' }}
+                        px={{ base: '12px', sm: '12px', md: '80px', lg: '160px' }}
+                        pb={{ base: '32px', sm: '32px', md: '16px', lg: '32px' }}
+                        pt={{ base: '8px', sm: '8px', md: '16px', lg: '16px' }}
                     // className="container-main-content-sm container-main-content-md container-main-content-lg"
                     >
                         {notionPage?.map((item: { id: Key | null | undefined; type: string; content?: string }) => (
