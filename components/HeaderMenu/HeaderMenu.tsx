@@ -12,16 +12,16 @@ import Link from 'next/link';
 
 
 const links = [
-  { link: '/about-kevin-cotter', label: 'About Kevin Cotter' },
-  { link: '/about-setmytrip', label: 'About SetMyTrip' },
-  // {
-  //   link: '#1',
-  //   label: 'Learn',
-  //   links: [
-  //     { link: '/about-kevin-cotter', label: 'About Kevin Cotter' },
-  //     { link: '/about-setmytrip', label: 'About Setmytrip' },
-  //   ],
-  // },
+  // { link: '/about-kevin-cotter', label: 'About Kevin Cotter' },
+  // { link: '/about-setmytrip', label: 'About SetMyTrip' },
+  {
+    link: '#1',
+    label: 'About',
+    links: [
+      { link: '/about-kevin-cotter', label: 'About Kevin Cotter' },
+      { link: '/about-setmytrip', label: 'About Setmytrip' },
+    ],
+  },
   // {
   //   link: '#2',
   //   label: 'Support',
@@ -43,7 +43,7 @@ export function HeaderMenu() {
   // };
 
   const items = links.map((link) => {
-    const menuItems = link.link?.map((item) => (
+    const menuItems = link.links?.map((item) => (
       <Menu.Item key={item.link}>{item.label}</Menu.Item>
     ));
 
