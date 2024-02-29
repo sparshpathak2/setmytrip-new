@@ -12,28 +12,25 @@ import Link from 'next/link';
 
 
 const links = [
-  { link: '/about', label: 'Features' },
-  {
-    link: '#1',
-    label: 'Learn',
-    links: [
-      { link: '/docs', label: 'Documentation' },
-      { link: '/resources', label: 'Resources' },
-      { link: '/community', label: 'Community' },
-      { link: '/blog', label: 'Blog' },
-    ],
-  },
-  { link: '/about', label: 'About' },
-  { link: '/pricing', label: 'Pricing' },
-  {
-    link: '#2',
-    label: 'Support',
-    links: [
-      { link: '/faq', label: 'FAQ' },
-      { link: '/demo', label: 'Book a demo' },
-      { link: '/forums', label: 'Forums' },
-    ],
-  },
+  { link: '/about-kevin-cotter', label: 'About Kevin Cotter' },
+  { link: '/about-setmytrip', label: 'About SetMyTrip' },
+  // {
+  //   link: '#1',
+  //   label: 'Learn',
+  //   links: [
+  //     { link: '/about-kevin-cotter', label: 'About Kevin Cotter' },
+  //     { link: '/about-setmytrip', label: 'About Setmytrip' },
+  //   ],
+  // },
+  // {
+  //   link: '#2',
+  //   label: 'Support',
+  //   links: [
+  //     { link: '/faq', label: 'FAQ' },
+  //     { link: '/demo', label: 'Book a demo' },
+  //     { link: '/forums', label: 'Forums' },
+  //   ],
+  // },
 ];
 
 export function HeaderMenu() {
@@ -158,8 +155,8 @@ export function HeaderMenu() {
 
 
             <NavLink
-              href="#required-for-focus"
-              label="Features"
+              href="/about-kevin-cotter"
+              label="About Kevin Cotter"
               // leftSection={<IconGauge size="1rem" stroke={1.5} />}
               childrenOffset={28}
             >
@@ -173,7 +170,7 @@ export function HeaderMenu() {
             </NavLink>
 
 
-            <NavLink
+            {/* <NavLink
               href="#required-for-focus"
               label="Learn"
               // leftSection={<IconGauge size="1rem" stroke={1.5} />}
@@ -183,11 +180,11 @@ export function HeaderMenu() {
               <NavLink label="Resources" href="#required-for-focus" />
               <NavLink label="Community" href="#required-for-focus" />
               <NavLink label="Blog" href="#required-for-focus" />
-            </NavLink>
+            </NavLink> */}
 
             <NavLink
-              href="#required-for-focus"
-              label="About"
+              href="/about-setmytrip"
+              label="About SetMyTrip"
               // leftSection={<IconFingerprint size="1rem" stroke={1.5} />}
               childrenOffset={12}
               defaultOpened
@@ -197,17 +194,17 @@ export function HeaderMenu() {
               <NavLink label="Third child link" href="#required-for-focus" /> */}
             </NavLink>
 
-            <NavLink
+            {/* <NavLink
               href="#required-for-focus"
               label="Pricing"
               // leftSection={<IconFingerprint size="1rem" stroke={1.5} />}
               childrenOffset={12}
               defaultOpened
             >
-              {/* <NavLink label="First child link" href="#required-for-focus" />
+              <NavLink label="First child link" href="#required-for-focus" />
               <NavLink label="Second child link" href="#required-for-focus" />
-              <NavLink label="Third child link" href="#required-for-focus" /> */}
-            </NavLink>
+              <NavLink label="Third child link" href="#required-for-focus" />
+            </NavLink> */}
 
             {/* <NavLink
               href="#required-for-focus"
@@ -220,7 +217,7 @@ export function HeaderMenu() {
               <NavLink label="Second child link" href="#required-for-focus" />
               <NavLink label="Third child link" href="#required-for-focus" />
             </NavLink> */}
-
+{/* 
             <NavLink
               href="http://localhost:3000/trips/hell-no"
               label="Support"
@@ -231,7 +228,7 @@ export function HeaderMenu() {
               <NavLink label="FAQs" href="#required-for-focus" />
               <NavLink label="Book a demo" href="#required-for-focus" />
               <NavLink label="Forums" href="#required-for-focus" />
-            </NavLink>
+            </NavLink> */}
 
 
 

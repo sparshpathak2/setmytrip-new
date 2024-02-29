@@ -10,23 +10,22 @@ import Image from 'next/image';
 
 const data = [
   {
-    title: 'About',
+    title: 'Important Links',
     links: [
-      { label: 'Features', link: '#' },
-      { label: 'Pricing', link: '#' },
-      { label: 'Support', link: '#' },
-      { label: 'Forums', link: '#' },
+      { label: 'Editorial Policy', link: '/editorial-policy' },
+      { label: 'Privacy Policy', link: '/privacy-policy' },
+      { label: 'Terms and Conditions', link: '/terms-and-conditions' },
     ],
   },
-  {
-    title: 'Project',
-    links: [
-      { label: 'Contribute', link: '#' },
-      { label: 'Media assets', link: '#' },
-      { label: 'Changelog', link: '#' },
-      { label: 'Releases', link: '#' },
-    ],
-  },
+  // {
+  //   title: 'Project',
+  //   links: [
+  //     { label: 'Contribute', link: '#' },
+  //     { label: 'Media assets', link: '#' },
+  //     { label: 'Changelog', link: '#' },
+  //     { label: 'Releases', link: '#' },
+  //   ],
+  // },
   // {
   //   title: 'Community',
   //   links: [

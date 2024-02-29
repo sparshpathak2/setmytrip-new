@@ -150,8 +150,8 @@ export default async function tripPage({ params }: { params: { slug: string } })
     const breadCrumbs = [
         { title: "Home", href: '/' },
         // { title: "Trips", href: '/trips' },
-        { title: "Trips", href: '' },
-        { title: `${list.databasePages[0].breadcrumb}`, href: '' }
+        { title: "Trips" },
+        { title: `${list.databasePages[0].breadcrumb}` }
     ].map((item, index) => (
         <Anchor href={item.href} key={index}>
             {item.title}
@@ -180,7 +180,7 @@ export default async function tripPage({ params }: { params: { slug: string } })
                         </Title>
                         <Flex gap='4px'>
                             <Text>Posted by:</Text>
-                            <Anchor href="https://mantine.dev/" target="_blank" underline="hover">
+                            <Anchor href="https://www.setmytrip.co/about-kevin-cotter" target="_blank" underline="hover">
                                 Team
                             </Anchor>
                         </Flex>

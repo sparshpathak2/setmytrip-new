@@ -16,7 +16,7 @@ export default async function aboutKevinCotter() {
 
     const breadCrumbs = [
         { title: "Home", href: '/' },
-        { title: 'About Kevin Cotter', href: '' }
+        { title: 'About SetMyTrip' }
     ].map((item, index) => (
         <Anchor href={item.href} key={index}>
             {item.title}
@@ -41,7 +41,7 @@ export default async function aboutKevinCotter() {
                 </Title>
                 <Flex gap='4px'>
                     <Text>Posted by:</Text>
-                    <Anchor href="https://mantine.dev/" target="_blank" underline="hover">
+                    <Anchor href="https://www.setmytrip.co/about-kevin-cotter" target="_blank" underline="hover">
                         Team
                     </Anchor>
                 </Flex>

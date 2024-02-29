@@ -15,6 +15,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         {
             url: `${process.env.BASE_URL}`
         },
+        {
+            url: `${process.env.BASE_URL}/about-kevin-cotter`
+        },
+        {
+            url: `${process.env.BASE_URL}/about-setmytrip`
+        },
+        {
+            url: `${process.env.BASE_URL}/editorial-policy`
+        },
+        {
+            url: `${process.env.BASE_URL}/privacy-policy`
+        },
+        {
+            url: `${process.env.BASE_URL}/terms-and-conditions`
+        },
         // {
         //     url: `${process.env.BASE_URL}/about`
         // },
