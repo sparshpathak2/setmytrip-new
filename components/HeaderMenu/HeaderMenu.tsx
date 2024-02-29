@@ -54,7 +54,7 @@ export function HeaderMenu() {
             <a
               href={link.link}
               className={classes.link}
-              onClick={(event) => event.preventDefault()}
+              // onClick={(event) => event.preventDefault()}
             >
               <Center>
                 <span className={classes.linkLabel}>{link.label}</span>
