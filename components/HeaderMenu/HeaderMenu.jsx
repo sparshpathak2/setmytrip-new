@@ -43,7 +43,7 @@ export function HeaderMenu() {
   // };
 
   const items = links.map((link) => {
-    const menuItems = link.links?.map((item) => (
+    const menuItems = link.link?.map((item) => (
       <Menu.Item key={item.link}>{item.label}</Menu.Item>
     ));
 
