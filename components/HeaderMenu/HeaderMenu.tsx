@@ -51,7 +51,7 @@ export function HeaderMenu() {
       return (
         <Menu key={link.label} trigger="hover" transitionProps={{ exitDuration: 0 }} withinPortal>
           <Menu.Target>
-            <a
+            {/* <a
               href={link.link}
               className={classes.link}
               onClick={(event) => event.preventDefault()}
@@ -60,7 +60,14 @@ export function HeaderMenu() {
                 <span className={classes.linkLabel}>{link.label}</span>
                 <IconChevronDown size="0.9rem" stroke={1.5} />
               </Center>
-            </a>
+            </a> */}
+
+            <Link href={link.link} className={classes.link} passHref>
+              <Center>
+                <span className={classes.linkLabel}>{link.label}</span>
+                <IconChevronDown size="0.9rem" stroke={1.5} />
+              </Center>
+            </Link>
           </Menu.Target>
           <Menu.Dropdown>{menuItems}</Menu.Dropdown>
         </Menu>
@@ -68,14 +75,22 @@ export function HeaderMenu() {
     }
 
     return (
-      <a
+      // <a
+      //   key={link.label}
+      //   href={link.link}
+      //   className={classes.link}
+      //   onClick={(event) => event.preventDefault()}
+      // >
+      //   {link.label}
+      // </a>
+      <Link
         key={link.label}
         href={link.link}
+        passHref
         className={classes.link}
-        onClick={(event) => event.preventDefault()}
       >
         {link.label}
-      </a>
+      </Link>
     );
   });
 
@@ -217,7 +232,7 @@ export function HeaderMenu() {
               <NavLink label="Second child link" href="#required-for-focus" />
               <NavLink label="Third child link" href="#required-for-focus" />
             </NavLink> */}
-{/* 
+            {/* 
             <NavLink
               href="http://localhost:3000/trips/hell-no"
               label="Support"
