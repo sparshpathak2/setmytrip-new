@@ -25,8 +25,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     // console.log(pageMetadata[0].metaDescription)
 
     return {
-        title: pageMetadata[0].pageTitle,
-        description: pageMetadata[0].metaDescription,
+        // title: {
+        //     template: pageMetadata[0]?.pageTitle,
+        //     default: "SetMyTrip: The Trips Just Planned for You",
+        // },
+        title: pageMetadata[0]?.pageTitle,
+        description: pageMetadata[0]?.metaDescription,
         robots: 'index, follow',
     }
 }
@@ -54,7 +58,7 @@ export default async function tripPage({ params }: { params: { slug: string } })
     // const testvar2 = await getNotionDatabasePages('508e27dfb143450ca668b9ee89567328')
     // console.log(testvar2)
 
-    const notionPage = await getNotionPageContentById(databasePageBySlugMatch[0].id)
+    const notionPage = await getNotionPageContentById(databasePageBySlugMatch[0]?.id)
     // console.log(notionPage)
 
     // testing 2
@@ -91,33 +95,6 @@ export default async function tripPage({ params }: { params: { slug: string } })
         try {
             // Construct the URLs for fetching data
             const urls = [
-                // `http://localhost:3000/api/notion-list-items?listid=${listIds[0].id}`,
-                // `http://localhost:3000/api/notion-pages/${listIds[0].id}`,
-                // `http://localhost:3000/api/notion-list-stays?listid=${listIds[0].id}`,
-                // `https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-list-items?listid=${listIds[0].id}`,
-                // `https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-pages/${listIds[0].id}`,
-                // `https://setmytrip-2zgpvk2ex-sparshpathak2.vercel.app/api/notion-list-stays?listid=${listIds[0].id}`,
-                // `https://setmytrip-new.vercel.app/api/notion-list-items?listid=${listIds[0].id}`,
-                // `https://setmytrip-new.vercel.app/api/notion-pages/${listIds[0].id}`,
-                // `https://setmytrip-new.vercel.app/api/notion-list-stays?listid=${listIds[0].id}`,
-                // `${process.env.BASE_URL}/api/notion-list-items?listid=${listIds[0].id}`, {
-                //     cache: "no-store"
-                // },
-                // `${process.env.BASE_URL}/api/notion-pages/${listIds[0].id}`, {
-                //     cache: "no-store"
-                // },
-                // `${process.env.BASE_URL}/api/notion-list-stays?listid=${listIds[0].id}`, {
-                //     cache: "no-store"
-                // },
-                // `https://setmytrip.co/api/notion-list-items?listid=${listIds[0].id}`, {
-                //     cache: "no-store"
-                // },
-                // `https://setmytrip.co/api/notion-pages/${listIds[0].id}`, {
-                //     cache: "no-store"
-                // },
-                // `https://setmytrip.co/api/notion-list-stays?listid=${listIds[0].id}`, {
-                //     cache: "no-store"
-                // },
                 `https://setmytrip.co/api/notion-list-items?listid=${listIds[0].id}`,
                 `https://setmytrip.co/api/notion-pages/${listIds[0].id}`,
                 `https://setmytrip.co/api/notion-list-stays?listid=${listIds[0].id}`,
@@ -154,7 +131,7 @@ export default async function tripPage({ params }: { params: { slug: string } })
     // const itrs = await itrsData.json()
 
     // console.log(itrs.listItems.notionPageData.notionPage.properties)
-    console.log(itrs.listItems.notionPageData.itrItemsList[0].itrItems[0])
+    // console.log(itrs.listItems.notionPageData.itrItemsList[0].itrItems[0])
 
     // TESTING FETCHING DATA ON THE SERVER SIDE END
 
@@ -196,7 +173,7 @@ export default async function tripPage({ params }: { params: { slug: string } })
                         <Flex gap='4px'>
                             <Text>Posted by:</Text>
                             <Anchor href="https://www.setmytrip.co/about-kevin-cotter" target="_blank" underline="hover">
-                                Team
+                                Kevin Cotter
                             </Anchor>
                         </Flex>
                     </Flex>

@@ -38,10 +38,10 @@ export async function getNotionDatabasePagesBySlugMatchTest(slug) {
 
         // const notionSlug = notionPages.results[0].properties.Slug.rich_text[0].text.content
 
-        return notionPages.results[0]
+        // return notionPages.results[0]
         // return notionPages
 
-        // return notionPages.results.map(fromNotionObject)
+        return notionPages.results.map(fromNotionObject)
         
 
     } catch (error) {
