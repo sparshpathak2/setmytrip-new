@@ -25,10 +25,6 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     // console.log(pageMetadata[0].metaDescription)
 
     return {
-        // title: {
-        //     template: pageMetadata[0]?.pageTitle,
-        //     default: "SetMyTrip: The Trips Just Planned for You",
-        // },
         title: pageMetadata[0]?.pageTitle,
         description: pageMetadata[0]?.metaDescription,
         robots: 'index, follow',
