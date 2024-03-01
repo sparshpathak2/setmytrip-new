@@ -109,20 +109,23 @@ export default async function tripPage({ params }: { params: { slug: string } })
                 // `${process.env.BASE_URL}/api/notion-list-stays?listid=${listIds[0].id}`, {
                 //     cache: "no-store"
                 // },
-                `https://setmytrip.co/api/notion-list-items?listid=${listIds[0].id}`, {
-                    cache: "no-store"
-                },
-                `https://setmytrip.co/api/notion-pages/${listIds[0].id}`, {
-                    cache: "no-store"
-                },
-                `https://setmytrip.co/api/notion-list-stays?listid=${listIds[0].id}`, {
-                    cache: "no-store"
-                },
+                // `https://setmytrip.co/api/notion-list-items?listid=${listIds[0].id}`, {
+                //     cache: "no-store"
+                // },
+                // `https://setmytrip.co/api/notion-pages/${listIds[0].id}`, {
+                //     cache: "no-store"
+                // },
+                // `https://setmytrip.co/api/notion-list-stays?listid=${listIds[0].id}`, {
+                //     cache: "no-store"
+                // },
+                `https://setmytrip.co/api/notion-list-items?listid=${listIds[0].id}`,
+                `https://setmytrip.co/api/notion-pages/${listIds[0].id}`,
+                `https://setmytrip.co/api/notion-list-stays?listid=${listIds[0].id}`,
             ];
 
             // Fetch data from multiple endpoints in parallel
             const responses = await Promise.all(
-                urls.map(url => fetch(url))
+                urls.map(url => fetch(url, { cache: "no-store" }))
             );
 
             // Check if any response is not successful
