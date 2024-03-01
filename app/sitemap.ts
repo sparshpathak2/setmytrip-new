@@ -7,7 +7,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const allPages = await getNotionDatabasePagesBySlug()
     console.log(allPages)
 
-    const allPagesBySlug = allPages.map(({slug}: { slug: string }) => ({
+    const allPagesBySlug = allPages?.map(({slug}: { slug: string }) => ({
         url: `${process.env.BASE_URL}/trips/${slug}`
     }))
 

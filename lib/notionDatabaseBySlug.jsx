@@ -36,7 +36,7 @@ export async function getNotionDatabasePagesBySlug() {
 
         // const notionSlug = notionPages.results[0].properties.Slug.rich_text[0].text.content
 
-        return notionPages.results.map(fromNotionObject)
+        return notionPages?.results?.map(fromNotionObject)
 
     } catch (error) {
         console.log(error)
