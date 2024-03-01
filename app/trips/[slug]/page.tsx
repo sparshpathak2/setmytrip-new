@@ -18,18 +18,18 @@ import { getNotionDatabasePageById } from "@/lib/notionDatabasePageById";
 import generateMetdata, { Metadata } from 'next'
 
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-    const { slug } = params
+// export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+//     const { slug } = params
 
-    const pageMetadata = await getNotionDatabasePagesBySlugMatch(slug)
-    // console.log(pageMetadata[0].metaDescription)
+//     const pageMetadata = await getNotionDatabasePagesBySlugMatch(slug)
+//     // console.log(pageMetadata[0].metaDescription)
 
-    return {
-        title: pageMetadata[0]?.pageTitle,
-        description: pageMetadata[0]?.metaDescription,
-        robots: 'index, follow',
-    }
-}
+//     return {
+//         title: pageMetadata[0]?.pageTitle,
+//         description: pageMetadata[0]?.metaDescription,
+//         robots: 'index, follow',
+//     }
+// }
 
 
 export default async function tripPage({ params }: { params: { slug: string } }) {
