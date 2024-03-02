@@ -34,7 +34,7 @@ const StaysCardComponentOld = ({ staysItems }: StaysCardComponentProps) => {
             >
                 <Card.Section>
                     <Image
-                        src={staysItems.thumbnail}
+                        // src={staysItems.thumbnail}
                         height={280}
                         // w="auto"
                         // fit="contain"
