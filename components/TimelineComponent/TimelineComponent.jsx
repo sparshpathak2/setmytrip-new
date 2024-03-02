@@ -311,6 +311,8 @@ const TimelineComponent = ({ itrs }) => {
                                                         }}
                                                         className='card-itr-item-sm card-itr-item-md card-itr-item-lg'
                                                         my='16px'
+                                                        padding="sm"
+                                                        radius={{ base: 'xs', sm: 'xs', md: 'md', lg: 'md' }}
                                                     >
                                                         {/* <Title order={3}>{page.title}</Title> */}
 
@@ -388,7 +390,8 @@ const TimelineComponent = ({ itrs }) => {
                                                                 className='item-usps-sm item-usps-md item-usps-lg'
                                                             >
                                                                 <List
-                                                                    spacing="xs"
+                                                                    // spacing="xs"
+                                                                    spacing="8px"
                                                                     size="sm"
                                                                 >
                                                                     <List.Item style={{ fontSize: '16px', marginTop: '8px', lineHeight: '1.25rem' }}

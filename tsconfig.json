@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "utils/reduceFuntion.tsx", "lib/notionPropertiesById.tsx", "lib/notionPagesDB.tsx", "lib/notionPageContentById.tsx", "lib/notionPage.tsx", "lib/notionDatabasePagesBySlugMatch2.tsx", "lib/notionDatabasePagesBySlugMatch.tsx", "lib/notionDatabasePages.tsx", "lib/notionDatabasePageById.tsx", "lib/notionDatabaseBySlug.tsx", "lib/notionDatabase.tsx", "lib/notionClient3.tsx", "lib/notionClient2.tsx", "lib/ndbpages.tsx", "lib/notionClient.tsx", "lib/notionClient copy.tsx", "lib/ndbpages copy.tsx", "app/api/notion-list-items/route.tsx", "components/TimelineComponent/TimelineComponent2.tsx", "app/page.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "utils/reduceFuntion.tsx", "lib/notionPropertiesById.tsx", "lib/notionPagesDB.tsx", "lib/notionPageContentById.tsx", "lib/notionPage.tsx", "lib/notionDatabasePagesBySlugMatch2.tsx", "lib/notionDatabasePagesBySlugMatch.tsx", "lib/notionDatabasePages.tsx", "lib/notionDatabasePageById.tsx", "lib/notionDatabaseBySlug.tsx", "lib/notionDatabase.tsx", "lib/notionClient3.tsx", "lib/notionClient2.tsx", "lib/ndbpages.tsx", "lib/notionClient.tsx", "lib/notionClient copy.tsx", "lib/ndbpages copy.tsx", "app/api/notion-list-items/route.tsx", "components/TimelineComponent/TimelineComponent2.tsx", "app/page.jsx", "components/StaysCardComponentOld/StaysCardComponentOld.jsx"],
   "exclude": ["node_modules"],
 }

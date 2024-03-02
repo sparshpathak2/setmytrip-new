@@ -4,49 +4,52 @@ import { Card, Image, Text, Badge, Button, Group, Title, Flex, Divider, List } f
 import { IconArrowUpRight, IconBed, IconCalendarEvent, IconClock12, IconCreditCard, IconHeart, IconMapPin, IconPointFilled, IconRoad, IconUserHeart } from '@tabler/icons-react'
 import '@/styles/globals.css';
 
-interface StaysItem {
-    type: string;
-    title: string;
-    rating: number;
-    distance: string;
-    priceRange: string;
-    roomOptions: string;
-    checkInOut: string;
-    location: string;
-    button1Title?: string;
-    button1Link?: string;
-    button2Title?: string;
-    button2Link?: string;
-    button3Title?: string;
-    button3Link?: string;
-}
+const gradientBackground = {
+    backgroundImage: 'linear-gradient(180deg, rgba(34,139,230,0.2) 2%, rgba(255,255,255,1) 100%)',
+    // padding: 20,
+    // borderRadius: 8,
+    // color: '#fff',
+    // marginBottom: "16px"
+  };
 
-interface StaysCardComponentProps {
-    staysItems: StaysItem;
-}
-
-const StaysCardComponent = ({ staysItems }: StaysCardComponentProps) => {
+const StaysCardComponent = ({ staysItems }) => {
     // console.log(staysItemArray)
     return (
         <>
-        
-            <Card shadow="sm" padding="lg" radius="md" style={{ marginBottom: '16px' }} withBorder
+
+            <Card shadow="sm" padding="sm" radius="md" style={gradientBackground} withBorder
                 className='card-itr-item-sm card-itr-item-md card-itr-item-lg'
+                
             >
-                <Card.Section>
-                    <Image
-                        src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80"
-                        height={240}
-                        alt="Norway"
-                    />
-                </Card.Section>
+                <Flex
+                    direction='column'
+                    gap='8px'
+                    // py='16px'
+                    pb="16px"
+                >
+
+                    <Title order={3} style={{ fontSize: '26px' }}>{staysItems.title}</Title>
+                    <Badge color="green.5" size='lg' >{staysItems.type}</Badge>
+                </Flex>
+
+                {/* <Card.Section> */}
+                <Image
+                    src={staysItems.thumbnail}
+                    height={240}
+                    // w="auto"
+                    // fit="contain"
+                    alt={staysItems.title}
+                    // radius={{ base: '0px', sm: '0px', md: 'md', lg: 'md' }}
+                    radius="md"
+                />
+                {/* </Card.Section> */}
                 <Flex
                     direction='column'
                     gap='8px'
                     py='16px'
                 >
-                    <Badge color="red.9" size='lg' variant='light'>{staysItems.type}</Badge>
-                    <Title order={3} style={{ fontSize: '26px' }}>{staysItems.title}</Title>
+                    {/* <Badge color="red.9" size='lg' variant='light'>{staysItems.type}</Badge> */}
+                    {/* <Title order={3} style={{ fontSize: '26px' }}>{staysItems.title}</Title> */}
                 </Flex>
                 <Card.Section>
                     <Divider />
@@ -85,7 +88,8 @@ const StaysCardComponent = ({ staysItems }: StaysCardComponentProps) => {
                         py='16px'
                     >
                         <List
-                            spacing="xs"
+                            // spacing="md"
+                            spacing="8px"
                             size="sm"
                         >
                             <List.Item style={{ fontSize: '16px', lineHeight: '1.25rem' }}
