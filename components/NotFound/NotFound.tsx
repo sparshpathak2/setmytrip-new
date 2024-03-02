@@ -12,7 +12,7 @@ export function NotFound() {
         been moved to another URL.
       </Text>
       <Group justify="center">
-        <Button variant="subtle" size="md">
+        <Button component="a" variant="subtle" href="https://setmytrip.co/" size="md">
           Take me back to home page
         </Button>
       </Group>

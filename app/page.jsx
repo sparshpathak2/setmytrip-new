@@ -41,9 +41,15 @@ export default function HomePage() {
           </Title> */}
 
           <Text className='home-overlay-text'>
-            This starter Next.js project includes a minimal setup for server side rendering, if you want
-            to learn more on Mantine + Next.js integration follow{' '}
+            Building Itineraries Made Simple 🗺️
           </Text>
+          <Text className='home-overlay-text-desc'>
+            Embark on a journey to discover the world's most captivating destinations with our meticulously crafted itineraries, showcasing the finest places across the globe.
+          </Text>
+          {/* <Text className='home-overlay-text-desc'>
+            Building Itineraries Made Simple. This starter Next.js project includes a minimal setup for server side rendering, if you want
+            to learn more on Mantine + Next.js integration follow{' '}
+          </Text> */}
           <Button component="a" href='' rightSection={<IconArrowUpRight size={14} />}>Explore Trips</Button>
         </Flex>
 

@@ -56,6 +56,20 @@
     }
 }
 
+.home-overlay-text-desc {
+    /* position: relative; */
+    font-size: 18px;
+    /* color: white; */
+    padding: 0px 240px 24px 240px;
+    text-align: center;
+    /* margin: 0px 24px 0px 24px; */
+
+    @media (max-width: $mantine-breakpoint-md) {
+        font-size: rem(14px);
+        padding: 0px 16px 16px 16px;
+    }
+}
+
 .home-main-title {
     /* color: light-dark(var(--mantine-color-black), var(--mantine-color-white)); */
     font-size: rem(64px);
