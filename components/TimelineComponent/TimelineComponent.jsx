@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import PageContent from '@/components/PageContent/PageContent';
 import ItrListItemSchedule from '../ItrListItemScheduleComponent/ItrListItemScheduleComponent';
 import StaysCardComponent from '../StaysCardComponent/StaysCardComponent';
+import StaysCardComponentOld from '../StaysCardComponentOld/StaysCardComponentOld';
 // import Image from 'next/image';
 
 
@@ -479,7 +480,7 @@ const TimelineComponent = ({ itrs }) => {
                         ))}
                         <Title order={2}>Staying Options</Title>
                         {itrs?.staysListItems?.notionPageData?.databasePages?.map((item) => (
-                            <StaysCardComponent
+                            <StaysCardComponentOld
                                 staysItems={item}
                             />
                         ))}
