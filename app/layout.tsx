@@ -52,11 +52,11 @@ export default function RootLayout({
       </head>
       <body>
         <MantineProvider>
-          {/* <HeaderMenu /> */}
+          <HeaderMenu />
           <main>
             {children}
           </main>
-          {/* <FooterMenu /> */}
+          <FooterMenu />
         </MantineProvider>
       </body>
     </html>

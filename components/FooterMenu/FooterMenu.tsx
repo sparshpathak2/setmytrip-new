@@ -41,22 +41,22 @@ const data = [
 export function FooterMenu() {
   const groups = data.map((group) => {
     const links = group.links.map((link, index) => (
-      // <Text<'a'>
-      //   key={index}
-      //   className={classes.link}
-      //   component="a"
-      //   href={link.link}
-      //   // onClick={(event) => event.preventDefault()}
-      //   // c="dimmed" 
-      //   size="sm"
-      // >
-      //   {link.label}
-      // </Text>
-      <Link key={index} href={link.link} passHref>
-      <Text component="a" className={classes.link} size="sm">
+      <Text<'a'>
+        key={index}
+        className={classes.link}
+        component="a"
+        href={link.link}
+        // onClick={(event) => event.preventDefault()}
+        // c="dimmed" 
+        size="sm"
+      >
         {link.label}
       </Text>
-    </Link>
+      // <Link key={index} href={link.link} passHref>
+      //   <Text component="a" className={classes.link} size="sm">
+      //     {link.label}
+      //   </Text>
+      // </Link>
     ));
 
     return (

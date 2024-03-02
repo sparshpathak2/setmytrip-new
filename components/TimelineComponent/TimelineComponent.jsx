@@ -78,7 +78,7 @@ import StaysCardComponent from '../StaysCardComponent/StaysCardComponent';
 
 
 const TimelineComponent = ({ itrs }) => {
-    console.log(itrs)
+    // console.log(itrs)
     // const listIds = itrs[0].relations
     //   console.log(listIds[0].id)
     // console.log(stays)
