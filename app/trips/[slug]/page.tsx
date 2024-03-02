@@ -89,11 +89,17 @@ export default async function tripPage({ params }: { params: { slug: string } })
 
     const fetchData = async (listIds: ListID[]) => {
         try {
+
+            if (!listIds || listIds.length === 0) {
+                // throw new Error('List IDs are empty or undefined');
+                return notFound()
+            }
+
             // Construct the URLs for fetching data
             const urls = [
-                `https://setmytrip.co/api/notion-list-items?listid=${listIds[0].id}`,
-                `https://setmytrip.co/api/notion-pages/${listIds[0].id}`,
-                `https://setmytrip.co/api/notion-list-stays?listid=${listIds[0].id}`,
+                `https://setmytrip.co/api/notion-list-items?listid=${listIds[0]?.id}`,
+                `https://setmytrip.co/api/notion-pages/${listIds[0]?.id}`,
+                `https://setmytrip.co/api/notion-list-stays?listid=${listIds[0]?.id}`,
             ];
 
             // Fetch data from multiple endpoints in parallel

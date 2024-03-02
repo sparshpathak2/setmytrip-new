@@ -7,7 +7,6 @@ import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/
 import footerLogo from '../../public/setmytrip-text-logo.png'
 import classes from '@/components/FooterMenu/FooterMenu.module.css'
 import Image from 'next/image';
-import Link from 'next/link';
 
 const data = [
   {
