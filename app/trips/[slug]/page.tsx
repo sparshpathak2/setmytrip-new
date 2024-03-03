@@ -44,8 +44,9 @@ export default async function tripPage({ params }: { params: { slug: string } })
     const databasePageBySlugMatch = await getNotionDatabasePagesBySlugMatch(slug)
     // console.log(databasePageBySlugMatch)
 
-    const testvar3 = await getNotionDatabasePages2("508e27dfb143450ca668b9ee89567328")
-    // console.log(testvar3)
+    // const testvar3 = await getNotionDatabasePages2("508e27dfb143450ca668b9ee89567328")
+    const testvar3 = await getNotionDatabasePages2("85f4d13e23c0413fae771554868d2e20")
+    console.log(testvar3)
 
     const testvar2 = await getNotionDatabasePagesBySlugMatchTest(slug)
     // console.log(testvar2)
@@ -102,7 +103,8 @@ export default async function tripPage({ params }: { params: { slug: string } })
             const urls = [
                 `https://setmytrip.co/api/notion-list-items?listid=${listIds[0]?.id}`,
                 `https://setmytrip.co/api/notion-pages/${listIds[0]?.id}`,
-                `https://setmytrip.co/api/notion-list-stays?listid=${listIds[0]?.id}`,
+                // `https://setmytrip.co/api/notion-list-stays?listid=${listIds[0]?.id}`,
+                `http://localhost:3000//api/notion-list-stays?listid=${listIds[0]?.id}`,
             ];
 
             // Fetch data from multiple endpoints in parallel
@@ -132,7 +134,7 @@ export default async function tripPage({ params }: { params: { slug: string } })
 
 
     const itrs = await fetchData(listIds)
-    console.log(itrs.staysListItems)
+    // console.log(itrs.staysListItems)
     // console.log(itrs.listItems)
     // const itrs = await itrsData.json()
 
