@@ -31,9 +31,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
        {
            url: `${process.env.BASE_URL}/terms-and-conditions`
        },
-       // {
-       //     url: `${process.env.BASE_URL}/about`
-       // },
+       {
+           url: `${process.env.BASE_URL}/trips`
+       },
        ...allPagesBySlug,
    ]
 }

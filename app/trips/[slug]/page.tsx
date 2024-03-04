@@ -16,6 +16,8 @@ import { Key } from "react";
 import TimelineComponent from "@/components/TimelineComponent/TimelineComponent";
 import { getNotionDatabasePageById } from "@/lib/notionDatabasePageById";
 import generateMetdata, { Metadata } from 'next'
+import PageContent2 from "@/components/PageContent2/PageContent2";
+import { getNotionDatabasePagesBySlugMatch2 } from "@/lib/notionDatabasePagesBySlugMatch2"
 
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
@@ -44,9 +46,15 @@ export default async function tripPage({ params }: { params: { slug: string } })
     const databasePageBySlugMatch = await getNotionDatabasePagesBySlugMatch(slug)
     // console.log(databasePageBySlugMatch)
 
+    const testvar5 = await getNotionDatabasePagesBySlugMatch2()
+    // console.log(testvar5)
+
+    const testvar4 = await getNotionDatabasePageById("85f4d13e23c0413fae771554868d2e20")
+    // console.log(testvar4)
+
     // const testvar3 = await getNotionDatabasePages2("508e27dfb143450ca668b9ee89567328")
     const testvar3 = await getNotionDatabasePages2("85f4d13e23c0413fae771554868d2e20")
-    console.log(testvar3)
+    // console.log(testvar3)
 
     const testvar2 = await getNotionDatabasePagesBySlugMatchTest(slug)
     // console.log(testvar2)
@@ -134,8 +142,8 @@ export default async function tripPage({ params }: { params: { slug: string } })
 
 
     const itrs = await fetchData(listIds)
-    // console.log(itrs.staysListItems)
-    // console.log(itrs.listItems)
+    // console.log(itrs)
+    // console.log(itrs.listItems.itrItemsList)
     // const itrs = await itrsData.json()
 
     // console.log(itrs.listItems.notionPageData.notionPage.properties)
@@ -150,10 +158,16 @@ export default async function tripPage({ params }: { params: { slug: string } })
     const breadCrumbs = [
         { title: "Home", href: '/' },
         // { title: "Trips", href: '/trips' },
-        { title: "Trips" },
+        { title: "Trips", href: '/trips' },
         { title: `${list.databasePages[0].breadcrumb}` }
     ].map((item, index) => (
-        <Anchor href={item.href} key={index}>
+        <Anchor
+            href={item.href}
+            key={index}
+            underline={item.href ? 'hover' : 'never'}
+            c={item.href ? '228be6' : 'black'}
+            // style={{ cursor: item.href ? 'pointer' : undefined }}
+        >
             {item.title}
         </Anchor>
     ));
@@ -197,7 +211,7 @@ export default async function tripPage({ params }: { params: { slug: string } })
                                     <TimelineComponent
                                         itrs={itrs}
                                     />
-                                ) : <PageContent
+                                ) : <PageContent2
                                     page={{ ...item, content: item.content! }}
                                 />}
                             </div>

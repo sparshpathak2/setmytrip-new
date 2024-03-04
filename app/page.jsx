@@ -50,7 +50,7 @@ export default function HomePage() {
             Building Itineraries Made Simple. This starter Next.js project includes a minimal setup for server side rendering, if you want
             to learn more on Mantine + Next.js integration follow{' '}
           </Text> */}
-          <Button component="a" href='' rightSection={<IconArrowUpRight size={14} />}>Explore Trips</Button>
+          <Button component="a" href='/trips' rightSection={<IconArrowUpRight size={14} />}>Explore Trips</Button>
         </Flex>
 
       </div>
