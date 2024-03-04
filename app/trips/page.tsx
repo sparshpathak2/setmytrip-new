@@ -3,6 +3,7 @@ import { Text, Title, Container, Divider, Center, Flex, Grid, Anchor, Breadcrumb
 import ItrCardComponent from '@/components/ItrCardComponrnt/ItrCardComponent';
 import { CustomGrid, CustomGridCol } from '@/components/GridComponent'
 import { getNotionDatabasePagesBySlug } from '@/lib/notionDatabaseBySlug';
+import generateMetdata, { Metadata } from 'next'
 
 interface ItrPage {
     id: string;
@@ -14,6 +15,14 @@ interface ItrPage {
     city: string;
     country: string;
     status: string;
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+    return {
+        title: "SetMyTrip: The Trips Just Planned for You",
+        description: 'The most comprehensive itineraries on your fingertips.',
+        robots: 'index, follow',
+    }
 }
 
 
