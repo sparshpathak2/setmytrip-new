@@ -18,7 +18,13 @@ export default async function aboutKevinCotter() {
         { title: "Home", href: '/' },
         { title: 'Editorial Policy' }
     ].map((item, index) => (
-        <Anchor href={item.href} key={index}>
+        <Anchor
+            href={item.href}
+            key={index}
+            underline={item.href ? 'hover' : 'never'}
+            c={item.href ? '228be6' : 'black'}
+            // style={{ cursor: item.href ? 'pointer' : undefined }}
+        >
             {item.title}
         </Anchor>
     ));

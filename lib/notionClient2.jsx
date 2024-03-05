@@ -22,6 +22,7 @@ export async function getNotionDatabasePages2(query) {
             roomOptions: propertiesById[process.env.NOTION_STAYS_ITEM_ROOMOPTIONS]?.rich_text[0]?.plain_text,
             checkInOut: propertiesById[process.env.NOTION_STAYS_ITEM_CHECKINOUT]?.rich_text[0]?.plain_text,
             priceRange: propertiesById[process.env.NOTION_STAYS_ITEM_PRICE]?.rich_text[0]?.plain_text,
+            recommendation: propertiesById[process.env.NOTION_STAYS_ITEM_RECOMMENDATION]?.rich_text[0]?.plain_text,
             relatedITR: propertiesById[process.env.NOTION_STAYS_ITEM_ITRS]?.relation,
             // duration: propertiesById[process.env.NOTION_ITR_ITEM_DURATION].rich_text[0]?.plain_text,
             // entryFee: propertiesById[process.env.NOTION_ITR_ITEM_ENTRY_FEE].rich_text[0]?.plain_text,

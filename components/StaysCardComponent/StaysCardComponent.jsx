@@ -10,7 +10,7 @@ const gradientBackground = {
     // borderRadius: 8,
     // color: '#fff',
     // marginBottom: "16px"
-  };
+};
 
 const StaysCardComponent = ({ staysItems }) => {
     // console.log(staysItemArray)
@@ -19,7 +19,7 @@ const StaysCardComponent = ({ staysItems }) => {
 
             <Card shadow="sm" padding="sm" radius="md" style={gradientBackground} withBorder
                 className='card-itr-item-sm card-itr-item-md card-itr-item-lg'
-                
+
             >
                 <Flex
                     direction='column'
@@ -46,7 +46,7 @@ const StaysCardComponent = ({ staysItems }) => {
                 <Flex
                     direction='column'
                     gap='8px'
-                    py='16px'
+                    py='8px'
                 >
                     {/* <Badge color="red.9" size='lg' variant='light'>{staysItems.type}</Badge> */}
                     {/* <Title order={3} style={{ fontSize: '26px' }}>{staysItems.title}</Title> */}
@@ -117,11 +117,11 @@ const StaysCardComponent = ({ staysItems }) => {
                                     <IconMapPin style={{ width: '22px', height: '22px', color: "#228be6" }} />
                                 }
                             >Location: {staysItems.location}</List.Item>
-                            {/* <List.Item style={{ fontSize: '16px', lineHeight: '22px' }}
-                        icon={
-                            <IconHeart style={{ width: '22px', height: '22px', color: "#228be6" }} />
-                        }
-                    >Personalized Recommendation: {subsubitem.personalizedRecommendation}</List.Item> */}
+                            <List.Item style={{ fontSize: '16px', lineHeight: '22px' }}
+                                icon={
+                                    <IconHeart style={{ width: '22px', height: '22px', color: "#228be6" }} />
+                                }
+                            >Personalized Recommendation: {staysItems.recommendation}</List.Item>
                         </List>
                     </Flex>
                     <Flex

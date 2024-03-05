@@ -292,7 +292,7 @@ const TimelineComponent = ({ itrs }) => {
                                     <ThemeIcon variant='white' color="blue" size={28} radius="xl">
                                         <IconCalendar style={{ width: '24px', height: '24px' }} />
                                     </ThemeIcon>
-                                    <Text size='22px' fw='700' fs='italic'>{item.day}</Text>
+                                    <Text size='24px' fw='700' fs='italic'>{item.day}</Text>
                                 </Flex>
 
                                 <Timeline active={10} className='timeline-sm timeline-md timeline-lg' lineWidth={2}>
