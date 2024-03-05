@@ -60,7 +60,7 @@ export function FooterMenu() {
 
     return (
       <div className={classes.wrapper} key={group.title}>
-        <Text c="dimmed" size="md" className={classes.title}>{group.title}</Text>
+        {/* <Text c="dimmed" size="md" className={classes.title}>{group.title}</Text> */}
         {links}
       </div>
     );

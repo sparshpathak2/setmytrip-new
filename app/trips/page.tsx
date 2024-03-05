@@ -31,7 +31,7 @@ export default async function trips() {
     // const itrPages: ItineraryItem[] = await getNotionDatabasePagesBySlugMatch2()
     const itrPages: ItrPage[] = await getNotionDatabasePagesBySlug()
 
-    console.log(itrPages)
+    // console.log(itrPages)
 
     const breadCrumbs = [
         { title: "Home", href: '/' },
