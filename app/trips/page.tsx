@@ -31,7 +31,7 @@ export default async function trips() {
     // const itrPages: ItineraryItem[] = await getNotionDatabasePagesBySlugMatch2()
     const itrPages: ItrPage[] = await getNotionDatabasePagesBySlug()
 
-    // console.log(itrPages)
+    console.log(itrPages)
 
     const breadCrumbs = [
         { title: "Home", href: '/' },
@@ -64,7 +64,7 @@ export default async function trips() {
                         order={1}
                         px={{ base: '16px', sm: '16px', md: '40px', lg: '240px' }}
                     >
-                        Itinararies
+                        Itineraries
                     </Title>
                     {/* <Flex gap='4px'>
                         <Text>Posted by:</Text>
