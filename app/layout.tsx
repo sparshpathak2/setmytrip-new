@@ -3,6 +3,7 @@ import '@mantine/core/styles.css';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { HeaderMenu } from '@/components/HeaderMenu/HeaderMenu';
 import { FooterMenu } from '@/components/FooterMenu/FooterMenu';
+import Script from 'next/script';
 
 export const metadata = {
   title: {
@@ -22,6 +23,17 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <ColorSchemeScript />
+
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-JPL0J1NSK8"></Script>
+        <Script id='google-analytics'>
+          {
+          `window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-JPL0J1NSK8');`
+          }
+        </Script>
       </head>
       <body>
         <MantineProvider>

@@ -143,7 +143,7 @@ export default async function tripPage({ params }: { params: { slug: string } })
 
 
     const itrs = await fetchData(listIds)
-    console.log(itrs.staysListItems.notionPageData.databasePages)
+    // console.log(itrs.staysListItems.notionPageData.databasePages)
     // console.log(itrs.listItems.itrItemsList)
     // const itrs = await itrsData.json()
 
