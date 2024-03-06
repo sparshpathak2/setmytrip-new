@@ -117,8 +117,8 @@ export default async function tripPage({ params }: { params: { slug: string } })
 
             // Fetch data from multiple endpoints in parallel
             const responses = await Promise.all(
-                // urls.map(url => fetch(url, { cache: "no-store" }))
-                urls.map(url => fetch(url))
+                urls.map(url => fetch(url, { cache: "no-store" }))
+                // urls.map(url => fetch(url))
             );
 
             // Check if any response is not successful
