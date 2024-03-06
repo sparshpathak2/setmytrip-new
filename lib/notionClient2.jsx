@@ -15,7 +15,7 @@ export async function getNotionDatabasePages2(query) {
         return {
             id: notionPage.id,
             title: propertiesById[process.env.NOTION_STAYS_ITEM_NAME]?.title[0]?.plain_text,
-            type: propertiesById[process.env.NOTION_STAYS_ITEM_TYPE]?.select.name,
+            type: propertiesById[process.env.NOTION_STAYS_ITEM_TYPE]?.select?.name,
             rating: propertiesById[process.env.NOTION_STAYS_ITEM_RATING]?.number,
             location: propertiesById[process.env.NOTION_STAYS_ITEM_LOCATION]?.rich_text[0]?.plain_text,
             distance: propertiesById[process.env.NOTION_STAYS_ITEM_DISTANCE]?.rich_text[0]?.plain_text,
