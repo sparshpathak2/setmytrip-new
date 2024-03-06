@@ -43,7 +43,7 @@ export default async function trips() {
             key={index}
             underline={item.href ? 'hover' : 'never'}
             c={item.href ? '228be6' : 'black'}
-            // style={{ cursor: item.href ? 'pointer' : undefined }}
+        // style={{ cursor: item.href ? 'pointer' : undefined }}
         >
             {item.title}
         </Anchor>
@@ -86,11 +86,11 @@ export default async function trips() {
                                 key={item.id}
                                 span={{ base: 12, md: 6, lg: 4 }}
                             >
-                                <Anchor underline="never" href={`/trips/${item.slug}`}>
-                                    <ItrCardComponent
-                                        itrPage={item}
-                                    />
-                                </Anchor>
+                                {item.slug && (
+                                    <Anchor underline="never" href={`/trips/${item.slug}`}>
+                                        <ItrCardComponent itrPage={item} />
+                                    </Anchor>
+                                )}
                             </CustomGridCol>
                         ))}
                     </CustomGrid>
