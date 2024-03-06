@@ -11,12 +11,12 @@ export async function getNotionDatabasePagesBySlug() {
 
         return {
             id: notionPage.id,
-            itineraryTitle: propertiesById[process.env.NOTION_ITR_TITLE_ID].title[0]?.plain_text,
-            pageTitle: propertiesById[process.env.NOTION_PAGE_TITLE].rich_text[0].plain_text,
-            city: propertiesById[process.env.NOTION_CITY_ID].select.name,
-            country: propertiesById[process.env.NOTION_COUNTRY_ID].select.name,
-            status: propertiesById[process.env.NOTION_STATUS_ID].status.name,
-            slug: propertiesById[process.env.NOTION_SLUG_ID].rich_text[0].plain_text,
+            itineraryTitle: propertiesById[process.env.NOTION_ITR_TITLE_ID]?.title[0]?.plain_text,
+            pageTitle: propertiesById[process.env.NOTION_PAGE_TITLE]?.rich_text[0]?.plain_text,
+            city: propertiesById[process.env.NOTION_CITY_ID]?.select?.name,
+            country: propertiesById[process.env.NOTION_COUNTRY_ID]?.select?.name,
+            status: propertiesById[process.env.NOTION_STATUS_ID]?.status?.name,
+            slug: propertiesById[process.env.NOTION_SLUG_ID]?.rich_text[0]?.plain_text,
         }
     }
 
