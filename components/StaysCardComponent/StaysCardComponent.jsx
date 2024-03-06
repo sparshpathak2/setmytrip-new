@@ -1,5 +1,6 @@
 'use client'
 
+import { CldImage } from 'next-cloudinary';
 import { Card, Image, Text, Badge, Button, Group, Title, Flex, Divider, List } from '@mantine/core'
 import { IconArrowUpRight, IconBed, IconCalendarEvent, IconClock12, IconCreditCard, IconHeart, IconMapPin, IconPointFilled, IconRoad, IconUserHeart } from '@tabler/icons-react'
 import '@/styles/globals.css';
@@ -33,7 +34,7 @@ const StaysCardComponent = ({ staysItems }) => {
                 </Flex>
 
                 {/* <Card.Section> */}
-                <Image
+                {/* <Image
                     src={staysItems.imageLink}
                     height={240}
                     // w="auto"
@@ -41,6 +42,13 @@ const StaysCardComponent = ({ staysItems }) => {
                     alt={staysItems.title}
                     // radius={{ base: '0px', sm: '0px', md: 'md', lg: 'md' }}
                     radius="md"
+                /> */}
+                <CldImage
+                    width="300"
+                    height="240"
+                    // cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
+                    src={staysItems.imageLink}
+                    alt={staysItems.title}
                 />
                 {/* </Card.Section> */}
                 <Flex
