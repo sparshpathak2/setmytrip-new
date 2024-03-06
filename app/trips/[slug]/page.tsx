@@ -54,7 +54,7 @@ export default async function tripPage({ params }: { params: { slug: string } })
 
     // const testvar3 = await getNotionDatabasePages2("508e27dfb143450ca668b9ee89567328")
     const testvar3 = await getNotionDatabasePages2("85f4d13e23c0413fae771554868d2e20")
-    console.log(testvar3)
+    // console.log(testvar3)
 
     const testvar2 = await getNotionDatabasePagesBySlugMatchTest(slug)
     // console.log(testvar2)
@@ -143,7 +143,7 @@ export default async function tripPage({ params }: { params: { slug: string } })
 
 
     const itrs = await fetchData(listIds)
-    // console.log(itrs)
+    console.log(itrs.staysListItems.notionPageData.databasePages)
     // console.log(itrs.listItems.itrItemsList)
     // const itrs = await itrsData.json()
 
