@@ -34,22 +34,22 @@ const StaysCardComponent = ({ staysItems }) => {
                 </Flex>
 
                 {/* <Card.Section> */}
-                {/* <Image
-                    src={staysItems.imageLink}
+                <Image
+                    src={staysItems.thumbnail}
                     height={240}
                     // w="auto"
                     // fit="contain"
                     alt={staysItems.title}
                     // radius={{ base: '0px', sm: '0px', md: 'md', lg: 'md' }}
                     radius="md"
-                /> */}
-                <CldImage
+                />
+                {/* <CldImage
                     width="300"
                     height="240"
                     // cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}
                     src={staysItems.imageLink}
                     alt={staysItems.title}
-                />
+                /> */}
                 {/* </Card.Section> */}
                 <Flex
                     direction='column'
