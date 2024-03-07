@@ -18,6 +18,7 @@ import { getNotionDatabasePageById } from "@/lib/notionDatabasePageById";
 import generateMetdata, { Metadata } from 'next'
 import PageContent2 from "@/components/PageContent2/PageContent2";
 import { getNotionDatabasePagesBySlugMatch2 } from "@/lib/notionDatabasePagesBySlugMatch2"
+import { getNotionDatabasePagesBySlug } from "@/lib/notionDatabaseBySlug";
 
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
@@ -45,6 +46,10 @@ export default async function tripPage({ params }: { params: { slug: string } })
     // console.log(notionPage)
     const databasePageBySlugMatch = await getNotionDatabasePagesBySlugMatch(slug)
     // console.log(databasePageBySlugMatch)
+
+
+    const testvar6 = await getNotionDatabasePagesBySlug()
+    // console.log(testvar6)
 
     const testvar5 = await getNotionDatabasePagesBySlugMatch2()
     // console.log(testvar5)
@@ -144,7 +149,7 @@ export default async function tripPage({ params }: { params: { slug: string } })
 
     const itrs = await fetchData(listIds)
     // console.log(itrs.staysListItems.notionPageData.databasePages)
-    // console.log(itrs.listItems.itrItemsList)
+    // console.log(itrs.listItems.notionPageData.itrItemsList[0].itrItems)
     // const itrs = await itrsData.json()
 
     // console.log(itrs.listItems.notionPageData.notionPage.properties)
