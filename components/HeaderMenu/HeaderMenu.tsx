@@ -18,7 +18,7 @@ const links = [
     link: '',
     label: 'About',
     links: [
-      { link: '/about-kevin-cotter', label: 'About Kevin Cotter' },
+      // { link: '/about-kevin-cotter', label: 'About Kevin Cotter' },
       { link: '/about-setmytrip', label: 'About Setmytrip' },
     ],
   },

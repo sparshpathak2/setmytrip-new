@@ -200,8 +200,8 @@ export default async function tripPage({ params }: { params: { slug: string } })
                         </Title>
                         <Flex gap='4px'>
                             <Text>Posted by:</Text>
-                            <Anchor href="https://www.setmytrip.co/about-kevin-cotter" target="_blank" underline="hover">
-                                Kevin Cotter
+                            <Anchor href="https://www.setmytrip.co/about-setmytrip" target="_blank" underline="hover">
+                                SetMyTrip Editorial
                             </Anchor>
                         </Flex>
                     </Flex>

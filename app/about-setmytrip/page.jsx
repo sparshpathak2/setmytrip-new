@@ -23,7 +23,7 @@ export default async function aboutKevinCotter() {
             key={index}
             underline={item.href ? 'hover' : 'never'}
             c={item.href ? '228be6' : 'black'}
-            // style={{ cursor: item.href ? 'pointer' : undefined }}
+        // style={{ cursor: item.href ? 'pointer' : undefined }}
         >
             {item.title}
         </Anchor>
@@ -47,25 +47,25 @@ export default async function aboutKevinCotter() {
                 </Title>
                 <Flex gap='4px'>
                     <Text>Posted by:</Text>
-                    <Anchor href="https://www.setmytrip.co/about-kevin-cotter" target="_blank" underline="hover">
-                        Team
+                    <Anchor href="https://www.setmytrip.co/about-setmytrip" target="_blank" underline="hover">
+                        SetMyTrip Editorial
                     </Anchor>
                 </Flex>
             </Flex>
             <Divider />
-            
+
             <Container
                 px={{ base: '12px', sm: '12px', md: '80px', lg: '160px' }}
                 pb={{ base: '32px', sm: '32px', md: '16px', lg: '32px' }}
                 pt={{ base: '8px', sm: '8px', md: '16px', lg: '16px' }}
             >
                 {pageContents?.map((item) => (
-                            <div key={item.id}>
-                                <PageContent
-                                    page={{ ...item, content: item.content }}
-                                />
-                            </div>
-                        ))}
+                    <div key={item.id}>
+                        <PageContent
+                            page={{ ...item, content: item.content }}
+                        />
+                    </div>
+                ))}
             </Container>
         </>
     )
