@@ -29,7 +29,57 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function trips() {
 
     // const itrPages: ItineraryItem[] = await getNotionDatabasePagesBySlugMatch2()
-    const itrPages: ItrPage[] = await getNotionDatabasePagesBySlug()
+    // const itrPages: ItrPage[] = await getNotionDatabasePagesBySlug()
+
+    const fetchData = async () => {
+        try {
+            // const url = `https://setmytrip.co/api/trips`;
+            const url = `http://localhost:3001/api/trips`;
+            const response = await fetch(url, { cache: "no-store" });
+        
+            if (!response.ok) {
+              throw new Error(`Failed to fetch data: ${response.statusText}`);
+            }
+        
+            const data = await response.json(); // Parse the response
+            const dbPages = data.databasePages; // Access the desired property
+        
+            return dbPages; // Return only the databasePages array
+          } catch (error) {
+            console.error('Error fetching data:', error);
+            throw error;
+          }
+
+
+
+        // try {
+        //     const url = `https://setmytrip.co/api/trips`;
+
+        //     // Fetch data from multiple endpoints in parallel
+        //     // const responses = await Promise.all(
+        //     //     urls.map(url => fetch(url, { cache: "no-store" }))
+        //     //     // urls.map(url => fetch(url))
+        //     // );
+
+        //     const response = await fetch(url, { cache: "no-store" });
+
+        //     const data = await response.json(); // Parse the response
+        //     const dbPages = data.databasePages;
+
+        //     return dbPages
+        // } catch (error) {
+        //     console.error('Error fetching data:', error);
+        //     throw error;
+        // }
+    };
+
+
+
+    const itrPages = await fetchData()
+
+
+
+
 
     console.log(itrPages)
 
