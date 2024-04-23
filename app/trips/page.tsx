@@ -131,7 +131,7 @@ export default async function trips() {
                     my="xl"
                 >
                     <CustomGrid>
-                        {itrPages?.map((item) => (
+                        {itrPages?.map((item: ItrPage) => (
                             <CustomGridCol
                                 key={item.id}
                                 span={{ base: 12, md: 6, lg: 4 }}
