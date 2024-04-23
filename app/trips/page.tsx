@@ -33,8 +33,8 @@ export default async function trips() {
 
     const fetchData = async () => {
         try {
-            // const url = `https://setmytrip.co/api/trips`;
-            const url = `http://localhost:3001/api/trips`;
+            const url = `https://setmytrip.co/api/trips`;
+            // const url = `http://localhost:3001/api/trips`;
             const response = await fetch(url, { cache: "no-store" });
         
             if (!response.ok) {
@@ -50,27 +50,6 @@ export default async function trips() {
             throw error;
           }
 
-
-
-        // try {
-        //     const url = `https://setmytrip.co/api/trips`;
-
-        //     // Fetch data from multiple endpoints in parallel
-        //     // const responses = await Promise.all(
-        //     //     urls.map(url => fetch(url, { cache: "no-store" }))
-        //     //     // urls.map(url => fetch(url))
-        //     // );
-
-        //     const response = await fetch(url, { cache: "no-store" });
-
-        //     const data = await response.json(); // Parse the response
-        //     const dbPages = data.databasePages;
-
-        //     return dbPages
-        // } catch (error) {
-        //     console.error('Error fetching data:', error);
-        //     throw error;
-        // }
     };
 
 
